@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Circular', 'Helvetica Neue', Helvetica, Arial;
+}
+
+.search {
+    font-size: 20px;
+}
+    
+.form-control {
+    background-color: transparent !important;
+    width: 25em;
+}
+
+@media screen and (max-width: 768px) {
+    .search, .form-control {
+        width: 15em !important;
+        font-size: 10px !important;
+    }
+    svg {
+        width: 10px !important;
+    }
+}
+
+.dropdown-menu {
+    font-size: small !important;
+}
+
+/* TODO: controllare perchè non va
+.search:focus {
+    border-color: white !important;
+} */
+
+.nav-text {
+    font-size: 14px !important;
+}
+
+.big-image, .big-li {
+    width: 2% !important;
+}
+
+.liGrande {
+    width: 13%;
+}
+
+.dropdown-item:hover {
+    background-color: #3E3D3D !important;
+}
+
