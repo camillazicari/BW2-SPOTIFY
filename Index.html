@@ -10,14 +10,83 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
+  <body class=>
+    <main class="container backgroundMain text-white mt-3">
+      <div class="m-3">
+        <button class="rounded-circle border-0 bg-black text-white"><i class="bi bi-chevron-left"></i></button>
+        <button class="rounded-circle border-0 bg-black text-white"><i class="bi bi-chevron-right"></i></button>
+      </div>
 
+      <div class="container bg-black" id="divSongHome">
+        <div class="row justify-content-start">
+          <div class="col-3">
+            <!--inserire qui la canzone random -->
+            <img src="assets/imgs/main/image-1.jpg" alt="..." width="200" />
+          </div>
+          <div class="col-6">
+            <p>ALBUM</p>
+            <p>TITOLO CANZONE</p>
+            <p>Nome artista</p>
+            <button type="button" class="rounded-5 px-4 py-2 me-3">Play</button>
+            <button type="button" class="rounded-5 px-4 py-2 me-5">Salva</button>
+            <button type="button" class="border-0 bg-transparent text-white"><i class="bi bi-three-dots"></i></button>
+          </div>
+        </div>
+      </div>
 
+      <section class="container">
+        <div class="my-2">
+          <button type="button">Tutto</button>
+          <button type="button">Musica</button>
+          <button type="button">Podcast</button>
+        </div>
 
+        <div class="row">
+          <div class="col-3">
+            <div class="border border-1">Brani che ti piacciono</div>
+            <div class="border border-1">Playlist1</div>
+          </div>
+          <div class="col-3">
+            <div class="border border-1">Sounds of New Year</div>
+            <div class="border border-1">Playlist Capodanno</div>
+          </div>
+          <div class="col-3">
+            <div class="border border-1">Queen</div>
+            <div class="border border-1">Playlist Solo e Abbandonato</div>
+          </div>
+          <div class="col-3">
+            <div class="border border-1">Heavy Metal</div>
+            <div class="border border-1">Playlist rilassante</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <h2>Creato per te</h2>
+        </div>
+        <div class="container">
+          <div class="row">
+            <!--Qui vanno inserite le "card" dal JS-->
+            <div>
+              <button type="button" class="border-0 bg-transparent">
+                <img
+                  class="rounded-2"
+                  src="assets/imgs/search/image-1.jpeg"
+                /><!--immagine del disco-->
+              </button>
+              <p class="mx-2">Titolo disco</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
