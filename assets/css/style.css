@@ -1,0 +1,20 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #0000;
+}
+
+.asideItem {
+    opacity: 0.8; 
+    transition: opacity 0.3s, transform 0.3s; 
+
+}
+
+.asideItem:hover  {
+    opacity: 1;
+    transform: scale(1.001);
+}
+aside {
+    width: fit-content;
+}
