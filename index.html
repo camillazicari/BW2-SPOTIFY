@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Clone</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main>
+        <footer>
+            <div class="bg-dark text-white fixed-bottom py-2">
+              <div class="container d-flex justify-content-between align-items-center">
+                <!-- Controlli Musica -->
+                <div class="d-flex align-items-center">
+                  <button class="btn btn-outline-light btn-sm me-2 btn-previous">
+                    <i class="fas fa-backward"></i>
+                  </button>
+                  <button class="btn btn-outline-light btn-sm me-2 btn-play">
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <button class="btn btn-outline-light btn-sm btn-next">
+                    <i class="fas fa-forward"></i>
+                  </button>
+                </div>
+    
+                <!-- Informazioni Brano -->
+                <div class="text-center">
+                  <p class="mb-0" id="song-title">Titolo</p>
+                  <small id="artist-name">Artista</small>
+                </div>
+    
+                <!-- Controllo Volume -->
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-volume-down text-white me-2"></i>
+                  <input type="range" class="form-range" id="volume-control" min="0" max="100" />
+                  <i class="fas fa-volume-up text-white ms-2"></i>
+                </div>
+              </div>
+    
+              <!-- Barra di avanzamento temporale -->
+              <div class="d-flex flex-column align-items-center w-100 mt-2">
+                <div class="d-flex justify-content-between w-100 px-3">
+                  <span id="current-time">0:00</span>
+                  <span id="total-time">0:00</span>
+                </div>
+                <input
+                  type="range"
+                  id="progress-bar"
+                  class="form-range"
+                  min="0"
+                  value="0"
+                  max="100"
+                  style="width: 100%;"
+                />
+              </div>
+            </div>
+          </footer>
+      <script src="assets/js/barra_audio.js"></script>
+    </main>
+  </body>
+</html>
