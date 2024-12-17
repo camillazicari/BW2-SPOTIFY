@@ -321,7 +321,8 @@
                 <p id="artistaRandom">Nome artista</p>
                 <button
                   type="button"
-                  class="greenSpotify fw-bold border-0 rounded-5 px-4 py-2 me-3" id="btnPlayRandom"
+                  class="greenSpotify fw-bold border-0 rounded-5 px-4 py-2 me-3"
+                  id="btnPlayRandom"
                 >
                   Play
                 </button>
@@ -376,7 +377,9 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Allenamenti a casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Allenamenti a casa</p>
+                  </div>
                 </div>
                 <div
                   class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
@@ -388,7 +391,9 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Pulizie di casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Pulizie di casa</p>
+                  </div>
                 </div>
               </div>
               <div class="col-8 col-lg-5 col-xl-3 p-0 me-4">
@@ -402,7 +407,9 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Estate 2022</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Estate 2022</p>
+                  </div>
                 </div>
                 <div
                   class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
@@ -414,7 +421,9 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">NewMusic Friday</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">NewMusic Friday</p>
+                  </div>
                 </div>
               </div>
               <div class="col-8 d-lg-none d-xl-grid col-xl-3 p-0 me-4">
@@ -428,7 +437,9 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Lavorare da casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Lavorare da casa</p>
+                  </div>
                 </div>
                 <div
                   class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 mb-2 pe-5"
@@ -440,7 +451,9 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Casa dolce casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Casa dolce casa</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -479,7 +492,9 @@
                     >
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">For the record</a>
+                    <a href="#" class="nav-link p-0 text-white"
+                      >For the record</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -503,7 +518,7 @@
                   </li>
                 </ul>
               </div>
-    
+
               <div class="col-6 col-md-2 mb-3">
                 <h5 class="font-weight-bold">Link utili</h5>
                 <ul class="nav flex-column">
@@ -534,10 +549,14 @@
                     <a href="#" class="nav-link p-0 text-white">Premium Duo</a>
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Premium Family</a>
+                    <a href="#" class="nav-link p-0 text-white"
+                      >Premium Family</a
+                    >
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Premium Student</a>
+                    <a href="#" class="nav-link p-0 text-white"
+                      >Premium Student</a
+                    >
                   </li>
                   <li class="nav-item mb-2">
                     <a href="#" class="nav-link p-0 text-white">Spotify Free</a>
@@ -583,7 +602,6 @@
               </div>
               <div class="container my-3">
                 <footer class="backgroundMain text-end text-white">
-
                   <div
                     class="d-flex flex-column flex-sm-row justify-content-between py-2 my-2 border-top"
                   >
@@ -603,5 +621,62 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/script.js"></script>
+
+    <section>
+      <div class="bg-dark text-white fixed-bottom py-2">
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <!-- Controlli Musica -->
+          <div class="d-flex align-items-center">
+            <button class="btn btn-outline-light btn-sm me-2 btn-previous">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button class="btn btn-outline-light btn-sm me-2 btn-play">
+              <i class="fas fa-play"></i>
+            </button>
+            <button class="btn btn-outline-light btn-sm btn-next">
+              <i class="fas fa-forward"></i>
+            </button>
+          </div>
+
+          <!-- Informazioni Brano -->
+          <div class="text-center">
+            <p class="mb-0" id="song-title">Titolo</p>
+            <small id="artist-name">Artista</small>
+          </div>
+
+          <!-- Controllo Volume -->
+          <div class="d-flex align-items-center">
+            <i class="fas fa-volume-down text-white me-2"></i>
+            <input
+              type="range"
+              class="form-range"
+              id="volume-control"
+              min="0"
+              max="100"
+            />
+            <i class="fas fa-volume-up text-white ms-2"></i>
+          </div>
+        </div>
+
+        <!-- Barra di avanzamento temporale -->
+        <div class="d-flex flex-column align-items-center w-100 mt-2">
+          <div class="d-flex justify-content-between w-100 px-3">
+            <span id="current-time">0:00</span>
+            <span id="total-time">0:00</span>
+          </div>
+          <input
+            type="range"
+            id="progress-bar"
+            class="form-range"
+            min="0"
+            value="0"
+            max="100"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
