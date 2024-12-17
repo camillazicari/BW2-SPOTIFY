@@ -14,6 +14,9 @@ const totalTimeLabel = document.getElementById("total-time");
 
 const btnForward = document.getElementById('btnForward');
 const btnBack = document.getElementById('btnBack');
+const playerBtnForward = document.getElementById('playerBtnForward');
+const playerBtnBack = document.getElementById('playerBtnBack');
+
 
 const artista = Math.floor(Math.random() * 10) + 1;
 const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artista}/top?limit=1`;
@@ -59,6 +62,10 @@ btnPlayRandom.addEventListener('click', (e) => {
     updateFooter();
 })
 
+btnPlayRandom.addEventListener('click', (e) => {
+    e.preventDefault();
+    updateFooter();
+})
 // * PLAYER AUDIO
 
 // Converte secondi in formato min:sec
@@ -88,6 +95,7 @@ function playMusic() {
     const playButton = document.querySelector(".btn-play i");
     playButton.classList.remove("fa-play");
     playButton.classList.add("fa-pause");
+    updateFooter();
 }
 
 // Pausa
