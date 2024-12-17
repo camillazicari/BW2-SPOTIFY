@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="assets/css/circular-font.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -15,7 +19,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -321,7 +324,8 @@
                 <p id="artistaRandom">Nome artista</p>
                 <button
                   type="button"
-                  class="greenSpotify fw-bold border-0 rounded-5 px-4 py-2 me-3" id="btnPlayRandom"
+                  class="greenSpotify fw-bold border-0 rounded-5 px-4 py-2 me-3"
+                  id="btnPlayRandom"
                 >
                   Play
                 </button>
@@ -367,7 +371,7 @@
             <div class="row flex-lg-nowrap justify-content-center fw-bold">
               <div class="col-8 col-lg-5 col-xl-3 p-0 me-4">
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -376,10 +380,12 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Allenamenti a casa</p></div>
+                  <div class="px-2 pt-3 position-relative">
+                    <p class="fontPlaylists">Allenamenti a casa</p>
+                  </div>
                 </div>
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -388,12 +394,14 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Pulizie di casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Pulizie di casa</p>
+                  </div>
                 </div>
               </div>
               <div class="col-8 col-lg-5 col-xl-3 p-0 me-4">
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -402,10 +410,12 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Estate 2022</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Estate 2022</p>
+                  </div>
                 </div>
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -414,12 +424,14 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">NewMusic Friday</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">NewMusic Friday</p>
+                  </div>
                 </div>
               </div>
               <div class="col-8 d-lg-none d-xl-grid col-xl-3 p-0 me-4">
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -428,10 +440,12 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Lavorare da casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Lavorare da casa</p>
+                  </div>
                 </div>
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 mb-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 mb-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -440,7 +454,9 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p class="fontPlaylists">Casa dolce casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Casa dolce casa</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -451,17 +467,8 @@
               <h2><a href="#" class="text-white">Creato per te</a></h2>
             </div>
             <div class="container">
-              <div class="row">
+              <div class="row justify-content-center" id="row">
                 <!--Qui vanno inserite le "card" dal JS-->
-                <div>
-                  <button type="button" class="border-0 bg-transparent">
-                    <img
-                      class="rounded-2"
-                      src="assets/imgs/search/image-1.jpeg"
-                    /><!--immagine del disco-->
-                  </button>
-                  <p class="mx-2">Titolo disco</p>
-                </div>
               </div>
             </div>
           </section>
@@ -479,7 +486,9 @@
                     >
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">For the record</a>
+                    <a href="#" class="nav-link p-0 text-white"
+                      >For the record</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -503,7 +512,7 @@
                   </li>
                 </ul>
               </div>
-    
+
               <div class="col-6 col-md-2 mb-3">
                 <h5 class="font-weight-bold">Link utili</h5>
                 <ul class="nav flex-column">
@@ -534,10 +543,14 @@
                     <a href="#" class="nav-link p-0 text-white">Premium Duo</a>
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Premium Family</a>
+                    <a href="#" class="nav-link p-0 text-white"
+                      >Premium Family</a
+                    >
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Premium Student</a>
+                    <a href="#" class="nav-link p-0 text-white"
+                      >Premium Student</a
+                    >
                   </li>
                   <li class="nav-item mb-2">
                     <a href="#" class="nav-link p-0 text-white">Spotify Free</a>
@@ -553,22 +566,19 @@
                     href="https://www.facebook.com/Spotify/"
                     role="button"
                     target="_blank"
-                    ><i class="fab fa-facebook-f">
+                    >
                       <img
                         src="assets/img/icons8-facebook-nuovo.svg"
-                        alt="" /></i
-                  ></a>
+                        alt="" /></a>
                   <!-- Instagram -->
                   <a
                     class="btn btn-floating p-0"
                     href="https://www.instagram.com/spotify/"
                     role="button"
                     target="_blank"
-                    ><i class="fab fa-instagram"
-                      ><img
+                    ><img
                         src="assets/img/icons8-instagram (1).svg"
-                        alt="" /></i
-                  ></a>
+                        alt="" /></a>
 
                   <!-- Linkedin -->
                   <a
@@ -576,14 +586,11 @@
                     href="https://it.linkedin.com/company/spotify"
                     role="button"
                     target="_blank"
-                    ><i class="fab fa-linkedin-in"
-                      ><img src="assets/img/icons8-linkedin.svg" alt="" /></i
-                  ></a>
+                    ><img src="assets/img/icons8-linkedin.svg" alt="" /></a>
                 </section>
               </div>
               <div class="container my-3">
-                <footer class="backgroundMain text-end text-white">
-
+                <footer class="backgroundMain text-end text-white mb-5">
                   <div
                     class="d-flex flex-column flex-sm-row justify-content-between py-2 my-2 border-top"
                   >
@@ -596,6 +603,63 @@
         </main>
       </div>
     </div>
+
+    <section>
+      <div class="backgroundMain text-white fixed-bottom py-2">
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <!-- Controlli Musica -->
+          <div class="d-flex align-items-center">
+            <button class="btn btn-outline-light btn-sm me-2 btn-previous">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button class="btn btn-outline-light btn-sm me-2 btn-play">
+              <i class="fas fa-play"></i>
+            </button>
+            <button class="btn btn-outline-light btn-sm btn-next">
+              <i class="fas fa-forward"></i>
+            </button>
+          </div>
+
+          <!-- Informazioni Brano -->
+          <div class="text-center">
+            <p class="mb-0" id="song-title">Titolo</p>
+            <small id="artist-name">Artista</small>
+          </div>
+
+          <!-- Controllo Volume -->
+          <div class="d-flex align-items-center">
+            <i class="fas fa-volume-down text-white me-2"></i>
+            <input
+              type="range"
+              class="form-range"
+              id="volume-control"
+              min="0"
+              max="100"
+            />
+            <i class="fas fa-volume-up text-white ms-2"></i>
+          </div>
+        </div>
+
+        <!-- Barra di avanzamento temporale -->
+        <div class="d-flex flex-column align-items-center w-100 mt-2">
+          <div class="d-flex justify-content-between w-100 px-3">
+            <span id="current-time">0:00</span>
+            <span id="total-time">0:00</span>
+          </div>
+          <input
+            type="range"
+            id="progress-bar"
+            class="form-range"
+            min="0"
+            value="0"
+            max="100"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

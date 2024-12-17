@@ -106,3 +106,61 @@ background: linear-gradient(180deg, rgba(120,96,232,0.5019257703081232) 0%, rgba
   font-size: 0.9em !important;
 }
 
+#song-title {
+  font-weight: bold;
+}
+
+#volume-control {
+  width: 120px;
+}
+
+#playlist {
+  display: inline-block;
+  background-color: #282828;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+#playlist:hover #btnGreenPlay {
+  display: block;
+  animation: slideUp 0.3s forwards;
+}
+
+#btnGreenPlay {
+      height: 55px;
+      display: none;
+      background-color: #1db954;
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+}
+
+#btnGreenPlay:hover {
+  background-color: #1ed760;
+  transform: scale(1.1);
+}
+
+.playlist:hover { 
+  transform: scale(1.05); 
+}
+
+@keyframes slideUp {
+  from {
+    top: 100%;
+    opacity: 0;
+  }
+  to {
+    top: 70%;
+    opacity: 1;
+  }
+}
+
+.album-grow:hover {
+  transform: scaleX(1.1) scaleY(1.1);
+  cursor: pointer;
+}
