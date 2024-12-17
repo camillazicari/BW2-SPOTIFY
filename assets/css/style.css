@@ -1,42 +1,42 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    font-family: 'Circular', 'Helvetica Neue', Helvetica, Arial;
+html,
+body {
+  font-family: "Circular", "Helvetica Neue", Helvetica, Arial;
 }
 
 .search {
-    font-size: 20px;
+  font-size: 20px;
 }
-    
+
 .form-control {
-    background-color: transparent !important;
-    width: 25em;
+  background-color: transparent !important;
+  width: 25em;
 }
 
- @media screen and (max-width: 768px) {
-    .search {
-        width: 20em !important;
-    }
-    svg {
-        width: 20px !important;
-    }
-    form input {
-        padding-right: 8em !important;
-    }
+@media screen and (max-width: 768px) {
+  .search {
+    width: 20em !important;
+  }
+  svg {
+    width: 20px !important;
+  }
+  form input {
+    padding-right: 8em !important;
+  }
 
-    .liGrande {
-        width: 25% !important;
-} 
-    .bi-spotify {
-        font-size: 2em !important;
-    }
- }
-
+  .liGrande {
+    width: 25% !important;
+  }
+  .bi-spotify {
+    font-size: 2em !important;
+  }
+}
 
 .dropdown-menu {
-    font-size: small !important;
+  font-size: small !important;
 }
 
 /* TODO: controllare perchè non va
@@ -45,33 +45,33 @@ html, body {
 } */
 
 .nav-text {
-    font-size: 14px !important;
+  font-size: 14px !important;
 }
 
-.big-image, .big-li {
-    width: 2% !important;
+.big-image,
+.big-li {
+  width: 2% !important;
 }
 
 .liGrande {
-    width: 16%;
+  width: 16%;
 }
 
 .dropdown-item:hover {
-    background-color: #3E3D3D !important;
+  background-color: #3e3d3d !important;
 }
 
 .asideItem {
-    opacity: 0.8; 
-    transition: opacity 0.3s, transform 0.3s; 
-
+  opacity: 0.8;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
-.asideItem:hover  {
-    opacity: 1;
-    transform: scale(1.001);
+.asideItem:hover {
+  opacity: 1;
+  transform: scale(1.001);
 }
 
-.w-6{
-    background: linear-gradient(139deg, #0000f9, #ffffff);
-    padding: 3.7px;
+.w-6 {
+  background: linear-gradient(139deg, #0000f9, #ffffff);
+  padding: 3.7px;
 }
