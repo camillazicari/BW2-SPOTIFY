@@ -15,15 +15,25 @@ html, body {
     width: 25em;
 }
 
-@media screen and (max-width: 768px) {
-    .search, .form-control {
-        width: 15em !important;
-        font-size: 10px !important;
+ @media screen and (max-width: 768px) {
+    .search {
+        width: 20em !important;
     }
     svg {
-        width: 10px !important;
+        width: 20px !important;
     }
-}
+    form input {
+        padding-right: 8em !important;
+    }
+
+    .liGrande {
+        width: 25% !important;
+} 
+    .bi-spotify {
+        font-size: 2em !important;
+    }
+ }
+
 
 .dropdown-menu {
     font-size: small !important;
@@ -49,4 +59,3 @@ html, body {
 .dropdown-item:hover {
     background-color: #3E3D3D !important;
 }
-
