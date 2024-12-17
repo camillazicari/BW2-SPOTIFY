@@ -12,6 +12,9 @@ const progressBar = document.getElementById("progress-bar");
 const currentTimeLabel = document.getElementById("current-time");
 const totalTimeLabel = document.getElementById("total-time");
 
+const btnForward = document.getElementById('btnForward');
+const btnBack = document.getElementById('btnBack');
+
 const artista = Math.floor(Math.random() * 10) + 1;
 const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artista}/top?limit=1`;
 
@@ -21,11 +24,13 @@ async function getArtist() {
         if (!response.ok) throw new Error("Errore nel recupero dei dati");
         data = await response.json();
         artist = data;
+        console.log(artist);
         printSong();
     } catch (error) {
         console.log(error);
     }
 }
+
 function printSong() {
     coverRandom.setAttribute('src', artist.data[0].album.cover_medium);
     albumRandom.innerHTML = artist.data[0].album.title;
@@ -33,8 +38,21 @@ function printSong() {
     artistaRandom.innerHTML = artist.data[0].artist.name;
 }
 
-getArtist();
+btnForward.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.reload(true);
+    getArtist();
+    printSong();
+})
 
+
+btnBack.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.reload(true);
+    getArtist();
+    printSong();
+})
+getArtist();
 
 btnPlayRandom.addEventListener('click', (e) => {
     e.preventDefault();
@@ -52,7 +70,7 @@ function formatTime(seconds) {
 
 // Aggiorna il footer con le informazioni del brano
 function updateFooter() {
-    document.getElementById("song-title").innerText = artist.data[0].album.title;
+    document.getElementById("song-title").innerText = artist.data[0].title;
     document.getElementById("artist-name").innerText = artist.data[0].artist.name;
 
     totalTimeLabel.innerText = formatTime(artist.data[0].duration); // Durata totale
@@ -125,11 +143,7 @@ progressBar.addEventListener("input", () => {
     audio.currentTime = progressBar.value;
 });
 
-//fetchMusicData();
 
-//   const btnAlbum = document.getElementById('btnAlbum');
-//   const titoloAlbum = document.getElementById('titoloAlbum');
-//   const artistaAlbum = document.getElementById('artistaAlbum');
 let id = [75621062, 1346746, 352412657, 15103893, 6157080, 286549802];
 let idRandom = id[Math.floor(Math.random() * id.length)];
 let album;
@@ -171,25 +185,5 @@ async function getSongs() {
 getSongs();
 
 
-
-// function printAlbum() {
-//     const row = document.getElementById('row');
-//     for (let i = 0; i < albums.length; i++) {
-//         let album1 = [albums[i].artist.name, albums[i].artist.picture_big, albums[i].title]
-//         let colAlbum = `
-//     <div class="col-md-4">
-//         <button type="button" class="border-0 bg-transparent" id="btnAlbum">
-//                     <img
-//                       class="rounded-2"
-//                       src="${album1[1]}"
-//                     /><!--immagine del disco-->
-//                   </button>
-//                   <p class="mx-2 mb-0" id="titoloAlbum">${album1[2]}</p>
-//                   <p class="mx-2 my-0" id="artistaAlbum">${album1[0]}</p>
-//     </div>
-//     `
-//     row.innerHTML += colAlbum;
-// }
-// }
 
 
