@@ -170,26 +170,3 @@ async function getSongs() {
 
 getSongs();
 
-
-
-// function printAlbum() {
-//     const row = document.getElementById('row');
-//     for (let i = 0; i < albums.length; i++) {
-//         let album1 = [albums[i].artist.name, albums[i].artist.picture_big, albums[i].title]
-//         let colAlbum = `
-//     <div class="col-md-4">
-//         <button type="button" class="border-0 bg-transparent" id="btnAlbum">
-//                     <img
-//                       class="rounded-2"
-//                       src="${album1[1]}"
-//                     /><!--immagine del disco-->
-//                   </button>
-//                   <p class="mx-2 mb-0" id="titoloAlbum">${album1[2]}</p>
-//                   <p class="mx-2 my-0" id="artistaAlbum">${album1[0]}</p>
-//     </div>
-//     `
-//     row.innerHTML += colAlbum;
-// }
-// }
-
-
