@@ -186,3 +186,100 @@ background: linear-gradient(180deg, rgba(120,96,232,0.5019257703081232) 0%, rgba
   cursor: pointer;
 }
 
+footer ul li {
+  font-size: 0.8em !important;
+  line-height: 0.9 !important;
+  opacity: 50% !important;
+}
+
+.btn-play {
+  width: 40px;
+  height: 40px;
+  font-size: 1em !important;
+  text-align: center !important;
+  padding-left: 14px;
+}
+
+.fa-pause {
+  padding-right: 2px;
+}
+
+#playerBtnBack:hover, #playerBtnForward:hover {
+  color: white !important;
+  opacity: 100% !important;
+  transform: scaleX(1.1) scaleY(1.1);
+}
+
+#progress-bar {
+  -webkit-appearance: none; /* Rimuove lo stile predefinito nei browser WebKit */
+  appearance: none;
+  height: 4px; /* Altezza del cursore */
+  background-color: white;
+  opacity: 50%;
+}
+
+#progress-bar::-webkit-slider-runnable-track {
+  -webkit-appearance: none; /* Rimuove lo stile predefinito nei browser WebKit */
+  appearance: none;
+  height: 4px; /* Altezza della barra */
+}
+
+#progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Rimuove lo stile predefinito nei browser WebKit */
+  appearance: none;
+  width: 12px; /* Dimensione del cursore */
+  height: 12px;
+  margin-top: -5px; /* Centra il cursore rispetto alla barra */
+  background-color: white;
+  border-radius: 50%;
+}
+
+#current-time, #total-time {
+  font-size: small;
+  opacity: 50%;
+}
+
+#volume-control {
+  -webkit-appearance: none; /* Rimuove lo stile predefinito su WebKit */
+  appearance: none; /* Rimuove lo stile predefinito */
+  height: 4px; /* Altezza della barra */
+  background: #ddd; /* Colore della barra */
+  border-radius: 2px; /* Angoli arrotondati */
+  outline: none; /* Rimuove il contorno */
+  opacity: 50%;
+
+}
+
+#volume-control::-webkit-slider-runnable-track {
+  height: 4px; /* Altezza della barra */
+  background: #ddd; /* Colore della barra */
+  border-radius: 2px;
+}
+
+#volume-control::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Permette di personalizzare il cursore */
+  appearance: none;
+  width: 12px; /* Larghezza del cursore */
+  height: 12px; /* Altezza del cursore */
+  background-color: white; /* Colore del cursore */
+  border-radius: 50%; /* Forma circolare */
+  border: 1px solid #999; /* Bordo del cursore */
+  cursor: pointer;
+  margin-top: -4px; /* Centra il cursore verticalmente */
+}
+
+/* Per Firefox */
+#volume-control::-moz-range-track {
+  height: 4px; /* Altezza della barra */
+  background: #ddd;
+  border-radius: 2px;
+}
+
+#volume-control::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 50%;
+  cursor: pointer;
+}
