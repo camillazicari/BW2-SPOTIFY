@@ -77,6 +77,27 @@ body {
   padding: 3.7px;
 }
 
+@media screen and (max-width: 992px) {
+  aside ul li svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  aside ul li svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  aside ul li svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
 
 .backgroundMain {
   background-color: #121212;
@@ -164,3 +185,4 @@ background: linear-gradient(180deg, rgba(120,96,232,0.5019257703081232) 0%, rgba
   transform: scaleX(1.1) scaleY(1.1);
   cursor: pointer;
 }
+
