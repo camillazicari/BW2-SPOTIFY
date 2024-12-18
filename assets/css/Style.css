@@ -380,3 +380,7 @@ ol li::marker {
   font-size: 110%;
   color: #ffffff8f;
 }
+
+.bi-heart-fill {
+  color: #1ed760;
+}

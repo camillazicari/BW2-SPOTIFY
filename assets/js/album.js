@@ -72,11 +72,10 @@ function printOtherAlbums() {
             console.log('RISPOSTE PER TUTTI GLI ALBUM:', albums);
             for (let i=0; i<albums.length; i++) {
                 const row2 = document.getElementById('row2');
-    
-                let colAlbum = `<div class="card backgroundMain" style="width: 18rem;">
+                
+                let colAlbum = `<div class="card backgroundMain col-3">
                                 <div class="position-relative" id="playlist">
                                     <img  width="80%" class="rounded-2 card-img-top" src="${albums[i].cover_big}" id="albumCover"/>
-                                    <button type="button" class="btn rounded-circle greenSpotify border-0 position-absolute bottom-0 end-0 m-2" id="btnGreenPlay"><i class="bi bi-play-fill fs-3 ps-1 text-black"></i></button>
                                 </div>    
                                     <div class="card-body">
                                         <p class="mx-2 mb-0 fs-6 text-white" id="titoloAlbum">${albums[i].title}</p>
@@ -132,7 +131,14 @@ function printTracks() {
                 <button class="border-0 bg-transparent p-0 ps-3" id="btnArtistiName"><p class="text-secondary playMusicHover">${tracks[i].artist.name}</p></button>
             </div>
             <div class="mb-3 col-6 bg-transparent text-end align-self-center text-secondary fw-light">
+            <div class="row justify-content-end">
+            <div class="col-3">
+            <button type="button" class="border-0 bg-transparent text-secondary p-0 fs-5" id="btnHeart"><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="col-3">
             <p>${minutes} min ${seconds} sec</p>
+            </div>
+            </div>
             </div>
         </li>`
 
@@ -225,6 +231,28 @@ function printTracks() {
         audio.volume = e.target.value / 100;
     });
 
+    const btnHeart = document.querySelectorAll('#btnHeart i')
+
+// Funzione per gestire il click
+function toggleHeart(e) {
+    e.preventDefault(); // Evita comportamenti predefiniti
+
+    const btn = e.currentTarget; // Ottieni il bottone cliccato
+    if (btn.classList.contains('bi-heart')) {
+        // Se ha la classe 'bi-heart', cambiala in 'bi-heart-fill'
+        btn.classList.remove('bi-heart');
+        btn.classList.add('bi-heart-fill');
+    } else if (btn.classList.contains('bi-heart-fill')) {
+        // Se ha la classe 'bi-heart-fill', cambiala in 'bi-heart'
+        btn.classList.remove('bi-heart-fill');
+        btn.classList.add('bi-heart');
+    }
+}
+
+// Aggiungi il listener di click a ciascun bottone
+btnHeart.forEach((btn) => {
+    btn.addEventListener('click', toggleHeart);
+});
 
     const btnArtistiName = document.querySelectorAll('#btnArtistiName');
     for (let i = 0; i < btnArtistiName.length; i++) {
