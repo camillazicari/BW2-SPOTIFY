@@ -16,6 +16,8 @@ const btnForward = document.getElementById('btnForward');
 const btnBack = document.getElementById('btnBack');
 const playerBtnForward = document.getElementById('playerBtnForward');
 const playerBtnBack = document.getElementById('playerBtnBack');
+const playerImg = document.getElementById('playerImg');
+
 
 
 const artista = Math.floor(Math.random() * 10) + 1;
@@ -39,6 +41,7 @@ function printSong() {
     albumRandom.innerHTML = artist.data[0].album.title;
     titoloRandom.innerHTML = artist.data[0].title;
     artistaRandom.innerHTML = artist.data[0].artist.name;
+    playerImg.setAttribute('src', artist.data[0].album.cover_big)
 }
 
 btnForward.addEventListener('click', (e) => {
@@ -170,21 +173,31 @@ async function getSongs() {
         let albums = await Promise.all(fetchPromises);
 
         console.log('RISPOSTE PER TUTTI GLI ALBUM:', albums);
-        albums.forEach((album, index) => {
+        for (let i=0; i<albums.length; i++) {
             const row = document.getElementById('row');
 
             let colAlbum = `<div class="card backgroundMain" style="width: 18rem;">
                             <div class="position-relative" id="playlist">
-                                <img  width="80%" class="rounded-2 card-img-top" src="${album.cover_big}"/>
+                                <img  width="80%" class="rounded-2 card-img-top" src="${albums[i].cover_big}" id="albumCover"/>
                                 <button type="button" class="btn rounded-circle greenSpotify border-0 position-absolute bottom-0 end-0 m-2" id="btnGreenPlay"><i class="bi bi-play-fill fs-3 ps-1 text-black"></i></button>
                             </div>    
                                 <div class="card-body">
-                                    <p class="mx-2 mb-0 fs-6 text-white" id="titoloAlbum">${album.title}</p>
-                                    <p class="mx-2 my-0 text-white-50" id="artistaAlbum">${album.artist.name}</p>  
+                                    <p class="mx-2 mb-0 fs-6 text-white" id="titoloAlbum">${albums[i].title}</p>
+                                    <p class="mx-2 my-0 text-white-50" id="artistaAlbum">${albums[i].artist.name}</p>  
                                 </div>
                             </div>`
             row.innerHTML += colAlbum;
-        });
+
+    const albumCover = document.querySelectorAll('#albumCover');
+    for (let i = 0; i < albumCover.length; i++) {
+        albumCover[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstUrl = 'album.html';
+            let newUrl = `${firstUrl}?_id=${albums[i].id}`;
+            window.location.href = newUrl;
+        })
+    }
+        };
     } catch (error) {
         console.log('Errore durante il recupero degli album:', error);
     }
