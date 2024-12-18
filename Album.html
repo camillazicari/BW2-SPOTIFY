@@ -301,7 +301,9 @@
         <main class="col-md-9 backgroundMain text-white rounded-3 g-2">
           <div class="container m-2" id="divSongHome">
             <div class="row justify-content-start">
-              <div class=" card bg-transparent border-0 col-4 col-lg-3 col-xl-2 p-0">
+              <div
+                class="card bg-transparent border-0 col-4 col-lg-3 col-xl-2 p-0"
+              >
                 <!--inserire qui la canzone random -->
                 <img
                   src="assets/imgs/main/image-12.jpg"
@@ -310,23 +312,81 @@
                   class="card-img rounded-3"
                 />
               </div>
-              <div class="card-body col-7 col-lg-6 col-xl-6 ms-3 align-self-center">
+              <div
+                class="card-body col-7 col-lg-6 col-xl-6 ms-3 align-self-center"
+              >
                 <p id="artistaRandom" class="text-white fw-light">Album</p>
-                <p class="display-5 fw-bold" id="titoloRandom">
-                  TITOLO CANZONE
-                </p>
+                <p class="display-5 fw-bold" id="titoloRandom">TITOLO ALBUM</p>
                 <a
                   class="text-white text-decoration-none d-flex align-items-center"
                   href="index.html"
-                  ><i class="bi bi-spotify fs-1 logoColorato me-1"></i>
+                  ><div class="contenitoreImgAlbum">
+                    <img
+                      src="https://cdn-images.dzcdn.net/images/cover/e50540d7f752c93e0695ebae272be0c3/56x56-000000-80-0-0.jpg"
+                      class="img-fluid rounded-circle"
+                      alt="..."
+                    />
+                  </div>
                   <p class="linkColorato m-0">Spotify</p>
-                  <p class="text-white-50 fw-light m-0"
-                    >&nbsp; ·&nbsp; 50 brani, circa 2 ore
+                  <p class="text-white-50 fw-light m-0">
+                    &nbsp; ·&nbsp; 50 brani, circa 2 ore
                   </p></a
                 >
               </div>
             </div>
           </div>
+
+          <div class="position-sticky top-0 backgroundMain">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="m-3">
+                <button
+                  type="button"
+                  class="btn rounded-circle greenSpotify btnCiccio mx-2 my-1"
+                >
+                  <i class="bi bi-play-fill fs-3 ps-1 text-black"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn rounded-5 fw-bold bg-transparent text-white px-3 py-1 mx-2 my-1 btnPlus"
+                >
+                  <i class="bi bi-plus-circle fs-2 fw-bold text-secondary"></i>
+                </button>
+              </div>
+              <div class="m-3 d-flex align-items-center text-secondary elenco">
+                <p class="m-0 me-2">Elenco</p>
+                <i class="bi bi-list-ul p-0 fs-4 pt-1"></i>
+              </div>
+            </div>
+
+            <div class="m-3">
+              <div class="row mx-2">
+                <div class="col-12 p-0">
+                  <ul
+                    class="titoloBraniAlbum list-unstyled d-flex text-secondary fw-light justify-content-between border-bottom border-secondary pb-2"
+                  >
+                    <li class="list m-0"># &nbsp; &nbsp; Titolo</li>
+                    <li class="me-4">
+                      <i class="bi bi-clock"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <ol class="col-12 mx-3">
+              <li>
+                <div class="row">
+                  <div class="mb-3 col-6 bg-transparent">
+                    <h5 class="text-white">Titolo</h5>
+                    <p class="text-white">Artista</p>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+          
 
           <footer
             class="container-fluid text-white backgroundMain d-flex justify-content-center mt-4"

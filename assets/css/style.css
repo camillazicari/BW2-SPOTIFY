@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-style: normal;
 }
 
 html,
@@ -330,3 +331,22 @@ footer ul li {
 .linkColorato:hover {
   text-decoration: underline !important;
 }
+
+.contenitoreImgAlbum {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.btnPlus:hover {
+  transform: scaleX(1.05) scaleY(1.05);
+}
+
+.bi-plus-circle:hover {
+  color: white !important;
+}
+
+.elenco:hover {
+  color: white !important;
+}
+
