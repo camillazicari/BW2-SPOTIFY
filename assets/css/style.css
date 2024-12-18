@@ -59,7 +59,7 @@ body {
   width: 16%;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover, .lineaColorata:hover {
   background-color: #3e3d3d !important;
 }
 
@@ -328,7 +328,8 @@ footer ul li {
   font-size: 1.7em !important;
 }
 
-.linkColorato:hover {
+.linkColorato:hover, .playMusicHover:hover {
+  color: white !important;
   text-decoration: underline !important;
 }
 
@@ -350,3 +351,38 @@ footer ul li {
   color: white !important;
 }
 
+.clock {
+  margin-right: 5.5em !important;
+}
+
+@media screen and (max-width: 576px) {
+  .clock {
+    margin-right: 2.4em !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .clock {
+    margin-right: 2.8em !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .clock {
+    margin-right: 3.6em !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .clock {
+    margin-right: 4.3em !important;
+  }
+}
+
+.playerImg {
+  width: 80px !important;
+}
+
+#lineaColorata:hover {
+  color: white !important;
+}
