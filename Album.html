@@ -299,7 +299,7 @@
         </div>
         <!--COMINCIA MAIN-->
         <main class="col-md-9 backgroundMain text-white rounded-3 g-2">
-          <div class="container m-2" id="divSongHome">
+          <div class="container m-2">
             <div class="row justify-content-start">
               <div
                 class="card bg-transparent border-0 col-4 col-lg-3 col-xl-2 p-0"
@@ -317,21 +317,24 @@
               >
                 <p id="artistaRandom" class="text-white fw-light">Album</p>
                 <p class="display-5 fw-bold" id="titoloRandom">TITOLO ALBUM</p>
-                <a
-                  class="text-white text-decoration-none d-flex align-items-center"
-                  href="index.html"
-                  ><div class="contenitoreImgAlbum">
+                <button
+                  class="border-0 bg-transparent text-white text-decoration-none d-flex align-items-center"
+                  id="linkToArtist"
+                >
+                  <div class="contenitoreImgAlbum">
                     <img
                       src="https://cdn-images.dzcdn.net/images/cover/e50540d7f752c93e0695ebae272be0c3/56x56-000000-80-0-0.jpg"
                       class="img-fluid rounded-circle"
                       alt="..."
+                      id="miniImg"
                     />
                   </div>
-                  <p class="linkColorato m-0">Spotify</p>
+                  <p class="linkColorato m-0" id="miniArtist">Spotify</p>
                   <p class="text-white-50 fw-light m-0">
-                    &nbsp; ·&nbsp; 50 brani, circa 2 ore
-                  </p></a
-                >
+                    &nbsp; ·&nbsp; <span id="numeroBrani">50 brani</span>,
+                    <span id="durataAlbum">circa 2 ore</span>
+                  </p>
+                </button>
               </div>
             </div>
           </div>
@@ -365,7 +368,7 @@
                     class="titoloBraniAlbum list-unstyled d-flex text-secondary fw-light justify-content-between border-bottom border-secondary pb-2"
                   >
                     <li class="list m-0"># &nbsp; &nbsp; Titolo</li>
-                    <li class="me-4">
+                    <li class="clock">
                       <i class="bi bi-clock"></i>
                     </li>
                   </ul>
@@ -375,18 +378,8 @@
           </div>
 
           <div>
-            <ol class="col-12 mx-3">
-              <li>
-                <div class="row">
-                  <div class="mb-3 col-6 bg-transparent">
-                    <h5 class="text-white">Titolo</h5>
-                    <p class="text-white">Artista</p>
-                  </div>
-                </div>
-              </li>
-            </ol>
+            <ol class="col-12 mx-3" id="row"></ol>
           </div>
-          
 
           <footer
             class="container-fluid text-white backgroundMain d-flex justify-content-center mt-4"
@@ -524,9 +517,14 @@
           class="container-fluid d-flex justify-content-between align-items-center"
         >
           <!-- Informazioni brano -->
-          <div>
-            <p class="mb-0" id="song-title">Titolo</p>
-            <small id="artist-name">Artista</small>
+          <div class="d-flex align-items-center">
+            <div class="playerImg me-2">
+              <img src="" alt="" class="w-100 rounded-3" id="playerImg" />
+            </div>
+            <div>
+              <p class="mb-0" id="song-title">Titolo</p>
+              <small id="artist-name">Artista</small>
+            </div>
           </div>
 
           <!-- Bottoni Player -->
