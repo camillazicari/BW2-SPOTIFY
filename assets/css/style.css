@@ -302,3 +302,31 @@ footer ul li {
   border-radius: 50%;
   cursor: pointer;
 }
+
+
+.contenitoreImg {
+  height: 300px;
+}
+
+.contenitoreImg img {
+  top: -50%;
+}
+
+.btnCiccio:hover {
+  background-color: #3BE476;
+  transform: scaleX(1.05) scaleY(1.05);
+}
+
+#btnSegui:hover {
+  border-color: white !important;
+  transform: scaleX(1.05) scaleY(1.05);
+}
+
+.logoColorato {
+  color: #1ed760;
+  font-size: 1.7em !important;
+}
+
+.linkColorato:hover {
+  text-decoration: underline !important;
+}
