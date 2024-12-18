@@ -36,6 +36,7 @@ async function getArtist() {
     }
 }
 
+
 function printSong() {
     coverRandom.setAttribute('src', artist.data[0].album.cover_medium);
     albumRandom.innerHTML = artist.data[0].album.title;
@@ -59,11 +60,6 @@ btnBack.addEventListener('click', (e) => {
     printSong();
 })
 getArtist();
-
-btnPlayRandom.addEventListener('click', (e) => {
-    e.preventDefault();
-    updateFooter();
-})
 
 btnPlayRandom.addEventListener('click', (e) => {
     e.preventDefault();
