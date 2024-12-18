@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="assets/css/circular-font.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -15,7 +19,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -231,19 +234,19 @@
           class="col-md-3 p-0 backgroundMain rounded-3 border-end border-5 border-black"
         >
           <!--QUI CI VA L'ASIDE-->
-          <aside class="p-3 lg-3">
+          <aside class="p-3">
             <div>
-              <ul class="list-unstyled text-white">
-                <li class="asideItem mb-2">
+              <ul class="list-unstyled text-white row">
+                <li class="asideItem mb-2 col-12">
                   <a class="nav-link" href="javascript:void(0)">
                     <svg
                       data-encore-id="icon"
                       role="img"
-                      width="22px"
-                      height="22px"
+                      width="40px"
+                      height="40px"
                       aria-hidden="true"
                       viewBox="0 0 16 16"
-                      class="me-2 bg-secondary p-1"
+                      class="bg-secondary p-1 me-1"
                       fill="currentColor"
                       style="border-radius: 3px"
                     >
@@ -251,17 +254,18 @@
                         d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z"
                       ></path>
                     </svg>
-                    Crea la tua playlist
+                    <span>Crea la tua playlist</span>
                   </a>
                 </li>
-                <li class="asideItem mb-2">
+                <li class="asideItem mb-2 col-12">
                   <a class="nav-link" href="javascript:void(0)">
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      class="w-6 h-6 text-gray-800 dark:text-white me-1"
+                      style="border-radius: 3px"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
+                      width="40px"
+                      height="40px"
                       fill="white"
                       viewBox="0 0 24 24"
                     >
@@ -269,16 +273,16 @@
                         d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z"
                       />
                     </svg>
-                    Brani che ti piacciono
+                    <span>Brani che ti piacciono</span>
                   </a>
                 </li>
-                <li class="asideItem">
+                <li class="asideItem col-12">
                   <a class="nav-link" href="javascript:void(0)">
                     <svg
-                      width="22px"
-                      height="22px"
+                      width="40px"
+                      height="40px"
                       fill="currentColor"
-                      class="bg-success p-1 me-2"
+                      class="bg-success p-1 me-1"
                       viewBox="0 0 16 16"
                       style="border-radius: 3px"
                     >
@@ -286,7 +290,7 @@
                         d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2"
                       />
                     </svg>
-                    I tuoi episodi
+                    <span>I tuoi episodi</span>
                   </a>
                 </li>
               </ul>
@@ -296,45 +300,48 @@
         <!--COMINCIA MAIN-->
         <main class="col-md-9 backgroundMain text-white rounded-3 g-2">
           <div class="m-2">
-            <button class="rounded-circle border-0 bg-black text-white mt-3">
+            <button
+              class="rounded-circle border-0 bg-black text-white mt-3"
+              id="btnBack"
+            >
               <i class="bi bi-chevron-left"></i>
             </button>
-            <button class="rounded-circle border-0 bg-black text-white">
+            <button
+              class="rounded-circle border-0 bg-black text-white"
+              id="btnForward"
+            >
               <i class="bi bi-chevron-right"></i>
             </button>
           </div>
 
           <div class="container gradientHero" id="divSongHome">
             <div class="row justify-content-start">
-              <div class="col-md-3 col-lg-2 my-3">
+              <div class="col-3 col-lg-3 col-xl-2 my-3">
                 <!--inserire qui la canzone random -->
                 <img
                   src="assets/imgs/main/image-12.jpg"
+                  class="rounded-3"
                   alt="..."
                   width="180"
+                  id="coverRandom"
                 />
               </div>
-              <div class="col-md-5 col-lg-6 ms-5">
-                <p class="mt-3 mb-0">ALBUM</p>
-                <p class="display-5">TITOLO CANZONE</p>
-                <p>Nome artista</p>
+              <div class="col-7 col-lg-6 col-xl-6 ms-5">
+                <p class="mt-3 mb-0" id="albumRandom">ALBUM</p>
+                <p class="display-5" id="titoloRandom">TITOLO CANZONE</p>
+                <p id="artistaRandom">Nome artista</p>
                 <button
                   type="button"
-                  class="greenSpotify fw-bold border-0 rounded-5 px-4 py-2 me-3"
+                  class="greenSpotify fw-bold border-0 rounded-5 px-4 py-2 me-3 mb-2"
+                  id="btnPlayRandom"
                 >
                   Play
                 </button>
                 <button
                   type="button"
-                  class="rounded-5 fw-bold bg-transparent border border-white text-white px-4 py-2 me-5"
+                  class="rounded-5 fw-bold bg-transparent border border-white text-white px-4 py-2 me-5 mb-2"
                 >
                   Salva
-                </button>
-                <button
-                  type="button"
-                  class="border-0 bg-transparent text-white"
-                >
-                  <i class="bi bi-three-dots"></i>
                 </button>
               </div>
             </div>
@@ -366,7 +373,7 @@
             <div class="row flex-lg-nowrap justify-content-center fw-bold">
               <div class="col-8 col-lg-5 col-xl-3 p-0 me-4">
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -375,10 +382,12 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p>Allenamenti a casa</p></div>
+                  <div class="px-2 pt-3 position-relative">
+                    <p class="fontPlaylists">Allenamenti a casa</p>
+                  </div>
                 </div>
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -387,12 +396,14 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p>Pulizie di casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Pulizie di casa</p>
+                  </div>
                 </div>
               </div>
               <div class="col-8 col-lg-5 col-xl-3 p-0 me-4">
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -401,10 +412,12 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p>Estate 2022</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Estate 2022</p>
+                  </div>
                 </div>
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -413,12 +426,14 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p>NewMusic Friday</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">NewMusic Friday</p>
+                  </div>
                 </div>
               </div>
               <div class="col-8 d-lg-none d-xl-grid col-xl-3 p-0 me-4">
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -427,10 +442,12 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p>Lavorare da casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Lavorare da casa</p>
+                  </div>
                 </div>
                 <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 mb-2 pe-5"
+                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 mb-2 pe-5 album-grow"
                 >
                   <div>
                     <img
@@ -439,7 +456,9 @@
                       width="80"
                     />
                   </div>
-                  <div class="px-2 pt-3"><p>Casa dolce casa</p></div>
+                  <div class="px-2 pt-3">
+                    <p class="fontPlaylists">Casa dolce casa</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -450,23 +469,16 @@
               <h2><a href="#" class="text-white">Creato per te</a></h2>
             </div>
             <div class="container">
-              <div class="row">
+              <div class="row justify-content-evenly" id="row">
                 <!--Qui vanno inserite le "card" dal JS-->
-                <div>
-                  <button type="button" class="border-0 bg-transparent">
-                    <img
-                      class="rounded-2"
-                      src="assets/imgs/search/image-1.jpeg"
-                    /><!--immagine del disco-->
-                  </button>
-                  <p class="mx-2">Titolo disco</p>
-                </div>
               </div>
             </div>
           </section>
-          <footer class="p-5 text-white backgroundMain">
-            <div class="row w-100">
-              <div class="col-6 col-md-2 mb-3">
+          <footer
+            class="container-fluid text-white backgroundMain d-flex justify-content-center mt-4"
+          >
+            <div class="row w-100 justify-content-xl-around">
+              <div class="col-3 col-xl-2 d-flex flex-column">
                 <h5 class="font-weight-bold">Azienda</h5>
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2">
@@ -478,11 +490,13 @@
                     >
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">For the record</a>
+                    <a href="#" class="nav-link p-0 text-white"
+                      >For the record</a
+                    >
                   </li>
                 </ul>
               </div>
-              <div class="col-6 col-md-2 mb-3">
+              <div class="col-3 col-xl-2 d-flex flex-column">
                 <h5 class="font-weight-bold">Community</h5>
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2">
@@ -494,16 +508,10 @@
                   <li class="nav-item mb-2">
                     <a href="#" class="nav-link p-0 text-white">Pubblicità</a>
                   </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Investitori</a>
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Venditori</a>
-                  </li>
                 </ul>
               </div>
-    
-              <div class="col-6 col-md-2 mb-3">
+
+              <div class="col-3 col-xl-2 d-flex flex-column">
                 <h5 class="font-weight-bold">Link utili</h5>
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2">
@@ -521,7 +529,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="col-6 col-md-2 mb-3">
+              <div class="col-3 col-xl-2 d-flex flex-column">
                 <h5 class="font-weight-bold">Piani Spotify</h5>
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2">
@@ -533,56 +541,56 @@
                     <a href="#" class="nav-link p-0 text-white">Premium Duo</a>
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Premium Family</a>
+                    <a href="#" class="nav-link p-0 text-white"
+                      >Premium Family</a
+                    >
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Premium Student</a>
+                    <a href="#" class="nav-link p-0 text-white"
+                      >Premium Student</a
+                    >
                   </li>
                   <li class="nav-item mb-2">
                     <a href="#" class="nav-link p-0 text-white">Spotify Free</a>
                   </li>
                 </ul>
               </div>
-              <div class="col-4">
+              <div class="col-12 col-xl-2">
                 <!-- Section: Social media -->
-                <section class="d-flex justify-content-evenly">
+                <section class="d-flex justify-content-center">
                   <!-- Facebook -->
                   <a
-                    class="btn btn-floating p-0"
+                    class="btn btn-floating p-0 mx-1"
                     href="https://www.facebook.com/Spotify/"
                     role="button"
                     target="_blank"
-                    ><i class="fab fa-facebook-f">
-                      <img
-                        src="assets/img/icons8-facebook-nuovo.svg"
-                        alt="" /></i
-                  ></a>
+                  >
+                    <img
+                      class="bg-primary rounded-circle"
+                      src="assets/img/icons8-facebook-nuovo.svg"
+                      alt=""
+                  /></a>
                   <!-- Instagram -->
                   <a
-                    class="btn btn-floating p-0"
+                    class="btn btn-floating p-0 mx-1"
                     href="https://www.instagram.com/spotify/"
                     role="button"
                     target="_blank"
-                    ><i class="fab fa-instagram"
-                      ><img
-                        src="assets/img/icons8-instagram (1).svg"
-                        alt="" /></i
-                  ></a>
+                    ><img src="assets/img/icons8-instagram (1).svg" alt=""
+                  /></a>
 
                   <!-- Linkedin -->
                   <a
-                    class="btn btn-floating p-0"
+                    class="btn btn-floating p-0 mx-1"
                     href="https://it.linkedin.com/company/spotify"
                     role="button"
                     target="_blank"
-                    ><i class="fab fa-linkedin-in"
-                      ><img src="assets/img/icons8-linkedin.svg" alt="" /></i
-                  ></a>
+                    ><img src="assets/img/icons8-linkedin.svg" alt=""
+                  /></a>
                 </section>
               </div>
               <div class="container my-3">
-                <footer class="backgroundMain text-end text-white">
-
+                <footer class="backgroundMain text-end text-white mb-5">
                   <div
                     class="d-flex flex-column flex-sm-row justify-content-between py-2 my-2 border-top"
                   >
@@ -595,6 +603,73 @@
         </main>
       </div>
     </div>
+
+    <section>
+      <div class="bg-black text-white fixed-bottom py-2">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
+          <!-- Informazioni brano -->
+          <div>
+            <p class="mb-0" id="song-title">Titolo</p>
+            <small id="artist-name">Artista</small>
+          </div>
+
+          <!-- Bottoni Player -->
+          <div class="d-flex flex-column w-50 mt-2 mx-auto">
+            <div
+              class="d-flex justify-content-between align-items-center w-100 px-3"
+            >
+              <span id="current-time">0:00</span>
+              <div class="d-flex align-items-center">
+                <button
+                  class="btn text-white-50 btn-sm btn-previous"
+                  id="playerBtnBack"
+                >
+                  <i class="fas fa-backward fs-5"></i>
+                </button>
+                <button
+                  class="btn bg-white text-dark rounded-circle btn-play mx-2"
+                >
+                  <i class="fas fa-play"></i>
+                </button>
+                <button
+                  class="btn text-white-50 btn-sm btn-next"
+                  id="playerBtnForward"
+                >
+                  <i class="fas fa-forward fs-5"></i>
+                </button>
+              </div>
+              <span id="total-time">0:00</span>
+            </div>
+            <input
+              type="range"
+              class="my-2"
+              id="progress-bar"
+              min="0"
+              value="0"
+              max="100"
+              style="width: 100%"
+            />
+          </div>
+
+          <!-- Controllo Volume -->
+          <div class="d-flex align-items-center">
+            <i class="fas fa-volume-down text-white me-2"></i>
+            <input
+              type="range"
+              class="form-range"
+              id="volume-control"
+              min="0"
+              max="100"
+            />
+            <i class="fas fa-volume-up text-white ms-2"></i>
+          </div>
+        </div>
+
+        <!-- Barra di avanzamento temporale -->
+      </div>
+    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
