@@ -45,6 +45,9 @@ function printSong() {
     coverRandom.setAttribute('src', artist.data[0].album.cover_medium);
     albumRandom.innerHTML = artist.data[0].album.title;
     titoloRandom.innerHTML = artist.data[0].title;
+    titoloRandom.classList.add('shadowText');
+    artistaRandom.classList.add('shadowText');
+    albumRandom.classList.add('shadowText');
     artistaRandom.innerHTML = artist.data[0].artist.name;
 }
 
@@ -176,7 +179,7 @@ async function getSongs() {
         for (let i=0; i<albums.length; i++) {
             const row = document.getElementById('row');
 
-            let colAlbum = `<div class="card backgroundMain" style="width: 18rem;">
+            let colAlbum = `<div class="card bg-transparent border-0" style="width: 18rem;">
                             <div class="position-relative" id="playlist">
                                 <img  width="80%" class="rounded-2 card-img-top" src="${albums[i].cover_big}" id="albumCover"/>
                                 <button type="button" class="btn rounded-circle greenSpotify border-0 position-absolute bottom-0 end-0 m-2" id="btnGreenPlay"><i class="bi bi-play-fill fs-3 ps-1 text-black"></i></button>
