@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="search-bar-container text-center my-4">
+        <input
+          type="text"
+          id="search-input"
+          class="form-control w-50 d-inline"
+          placeholder="Cerca canzoni, artisti, album"
+        />
+        <button class="btn btn-primary" id="search-button">Cerca</button>
+      </div>
+      <div id="search-results" class="container my-4"></div>
+
+      <section>
+        <div class="bg-black text-white fixed-bottom py-2">
+          <div
+            class="container-fluid d-flex justify-content-between align-items-center"
+          >
+            <!-- Informazioni brano -->
+            <div class="d-flex align-items-center">
+              <div class="playerImg me-2">
+                <img src="" alt="" class="w-100 rounded-3" id="playerImg"/>
+              </div>
+              <div>
+              <p class="mb-0" id="song-title">Titolo</p>
+              <small id="artist-name">Artista</small>              
+              </div>
+  
+            </div>
+  
+            <!-- Bottoni Player -->
+            <div class="d-flex flex-column w-50 mt-2 mx-auto">
+              <div
+                class="d-flex justify-content-between align-items-center w-100 px-3"
+              >
+                <span id="current-time">0:00</span>
+                <div class="d-flex align-items-center">
+                  <button
+                    class="btn text-white-50 btn-sm btn-previous"
+                    id="playerBtnBack"
+                  >
+                    <i class="fas fa-backward fs-5"></i>
+                  </button>
+                  <button
+                    class="btn bg-white text-dark rounded-circle btn-play mx-2"
+                  >
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <button
+                    class="btn text-white-50 btn-sm btn-next"
+                    id="playerBtnForward"
+                  >
+                    <i class="fas fa-forward fs-5"></i>
+                  </button>
+                </div>
+                <span id="total-time">0:00</span>
+              </div>
+              <input
+                type="range"
+                class="my-2"
+                id="progress-bar"
+                min="0"
+                value="0"
+                max="100"
+                style="width: 100%"
+              />
+            </div>
+  
+            <!-- Controllo Volume -->
+            <div class="d-flex align-items-center">
+              <i class="fas fa-volume-down text-white me-2"></i>
+              <input
+                type="range"
+                class="form-range"
+                id="volume-control"
+                min="0"
+                max="100"
+              />
+              <i class="fas fa-volume-up text-white ms-2"></i>
+            </div>
+          </div>
+  
+          <!-- Barra di avanzamento temporale -->
+        </div>
+      </section>
+      
+     <script src="assets/js/barra_audio.js"></script> 
+</body>
+</html>

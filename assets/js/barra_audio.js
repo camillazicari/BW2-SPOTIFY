@@ -110,11 +110,6 @@ progressBar.addEventListener("input", () => {
 });
 
 
-
-
-
-
-
 // il search iniza da qui
 async function searchSongs(query) {
   const searchUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(query)}`;
