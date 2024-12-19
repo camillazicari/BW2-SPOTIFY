@@ -75,6 +75,15 @@ Per maggiori dettagli, scrivi a **noreply@epicode.com** :email:
 
 ---
 
+## Sviluppatori
+
+ :woman_technologist:  [Camilla Zicari](https://github.com/camillazicari)
+ :woman_office_worker: [Francesca Palmeri](https://github.com/Francesca-palmeri)
+ :man_office_worker:   [Miguel Jano Salcedo](https://github.com/migueljano)
+ :woman_technologist: [Manuela Lissia](https://github.com/M4nu3l4)
+ :man_technologist: [Giovanni Ramaglia](https://github.com/cybergam3r)
+
+
 ## 📜 Licenza
 
  <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" width="50" /> &copy; è distribuito sotto la licenza di <img src ="https://github.com/user-attachments/assets/5e0ad6af-90f2-4f6f-83c0-7a2a5fd4af6c" width="15"> **Epicode** , Via dei Magazzini Generali, 16, Roma.
