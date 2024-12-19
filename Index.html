@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="position-sticky top-0 z-2">
       <nav class="navbar navbar-expand bg-black" data-bs-theme="dark">
         <div class="container-fluid justify-content-xxl-between">
           <div class="row w-100 m-0 justify-content-between">
@@ -234,8 +234,8 @@
           class="col-md-3 p-0 backgroundMain rounded-3 border-end border-5 border-black"
         >
           <!--QUI CI VA L'ASIDE-->
-          <aside class="p-3">
-            <div>
+          <aside class="p-3 stickyAside">
+            <div class="border-bottom border-black">
               <ul class="list-unstyled text-white row">
                 <li class="asideItem mb-2 col-12">
                   <a class="nav-link" href="javascript:void(0)">
@@ -660,7 +660,7 @@
           </div>
 
           <!-- Controllo Volume -->
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center" id="volume">
             <i class="fas fa-volume-down text-white me-2"></i>
             <input
               type="range"
