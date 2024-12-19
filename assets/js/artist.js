@@ -10,7 +10,8 @@ const ascoltatoriMensili = document.getElementById('ascoltatoriMensili');
 const totalTimeLabel = document.getElementById("total-time");
 const progressBar = document.getElementById("progress-bar");
 const currentTimeLabel = document.getElementById("current-time");
-const btnCiccio = document.getElementById('btnCiccio')
+const btnCiccio = document.getElementById('btnCiccio');
+const btnSegui = document.getElementById('btnSegui');
 
 let currentTrackIndex = 0;
 let audio = new Audio();
@@ -177,7 +178,19 @@ async function getAscoltatori() {
         if (!response.ok) throw new Error("Errore nel recupero degli album");
         ascoltatori = await response.json();
         printAscoltatori();
-        printSongs();
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btnSegui.classList.add('text-transition');
+                btnSegui.classList.remove('border');
+                btnSegui.classList.add('border-0');
+                btnSegui.innerHTML = `<p class="titoloScroll m-0">${ascoltatori.name}</p>`;
+            } else {
+                btnSegui.classList.add('border');
+                btnSegui.classList.remove('border-0');
+                btnSegui.classList.remove('text-transition');
+                btnSegui.innerText = 'Segui';
+            }
+        }); 
     } catch (error) {
         console.log("Errore durante il recupero dell'album: ", error);
     }

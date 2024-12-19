@@ -18,6 +18,7 @@ const playerImg = document.getElementById('playerImg');
 const linkToArtist = document.getElementById('linkToArtist');
 const btnCiccio = document.getElementById('btnCiccio');
 const row2 = document.getElementById('row2');
+const btnPlus = document.querySelector('.btnPlus');
 
 let currentTrackIndex = 0;
 let audio = new Audio();
@@ -43,6 +44,17 @@ async function getAlbum() {
             }
         }
         getForAlbum();
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 210) {
+                btnPlus.classList.add('text-transition');
+                btnPlus.innerHTML = `<p class="titoloScroll m-0">${albums.title}</p>`;
+            } else {
+                btnPlus.classList.remove('text-transition');
+                btnPlus.innerHTML = `<i class="bi bi-plus-circle fs-2 fw-bold text-secondary"></i>`;
+            }
+        });        
+
         console.log("Album recuperato:", albums);
     } catch (error) {
         console.log("Errore durante il recupero dell'album: ", error);
@@ -138,7 +150,7 @@ function printTracks() {
         <li>
         <div class="row lineaColorata w-100" id="row">
             <div class="mb-3 col-6 bg-transparent d-flex flex-column align-items-start pt-4">
-                <button class="border-0 bg-transparent p-0 ps-3" id="btnSongTitle"><h6 class="text-white playMusicHover">${tracks[i].title}</h6></button>
+                <button class="border-0 bg-transparent p-0 ps-3" id="btnSongTitle"><h6 class="text-white playMusicHover text-start">${tracks[i].title}</h6></button>
                 <button class="border-0 bg-transparent p-0 ps-3" id="btnArtistiName"><p class="text-secondary playMusicHover">${tracks[i].artist.name}</p></button>
             </div>
             <div class="mb-3 col-6 bg-transparent text-end align-self-center text-secondary fw-light">

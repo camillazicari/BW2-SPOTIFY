@@ -327,9 +327,9 @@ footer ul li {
   transform: scaleX(1.05) scaleY(1.05);
 }
 
-#btnSegui:hover {
+.btnSegui:hover {
   border-color: white !important;
-  transform: scaleX(1.05) scaleY(1.05);
+  transform: scaleX(1.05) scaleY(1.05) !important;
 }
 
 .logoColorato {
@@ -348,10 +348,6 @@ footer ul li {
   width: 35px;
   height: 35px;
   margin-right: 10px;
-}
-
-.btnPlus:hover {
-  transform: scaleX(1.05) scaleY(1.05);
 }
 
 .bi-plus-circle:hover {
@@ -429,15 +425,57 @@ height: 8px;
   transition: max-height 0.5s ease; 
 }
 
-.stickyAside {
+.stickyAside, .stickyAlbum {
   position: sticky !important;
   top: 75px !important;
 }
 
+.titoloScroll {
+  font-size: xx-large;
+  text-align: start;
+}
+
+@media screen and (max-width: 1200px) {
+  .titoloScroll {
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .titoloScroll {
+    font-size: larger;
+  }
+.stickyAlbum {
+  top: 67px !important;
+}
+  
+}
+
+@media screen and (max-width: 768px) {
+  .titoloScroll {
+    font-size: large;
+  }
+  .stickyAlbum {
+    top: 75px !important;
+  }
+}
+
 @media screen and (max-width: 576px) {
+  .titoloScroll {
+    font-size: medium;
+  }
   .stickyAside {
     position: sticky !important;
     top: 20px !important;
   }
   
+}
+
+.titoloScroll {
+  opacity: 0.5; /* Inizialmente invisibile */
+  transition: opacity 0.5s ease-in-out; /* Transizione fluida */
+}
+
+.text-transition .titoloScroll {
+  opacity: 1; /* Mostra il testo con transizione */
 }
