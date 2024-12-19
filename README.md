@@ -1,9 +1,10 @@
 ## SPOTIFY
 ### Descrizione
-#### Benvenuti in <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="50" />. :grin:
-# 🎶 MyMusic – Il tuo mondo musicale personalizzato 🎵
+#### Benvenuti in :grin:
+🎶 **SPOTIFY** – Il tuo mondo musicale personalizzato 🎵
 
-Benvenuto in **Spotify**, un'applicazione web progettata per rivoluzionare il modo in cui scopri, organizzi e ascolti la tua musica preferita. **Spotify** ti permette di esplorare album di artisti, selezionare i tuoi preferiti e creare playlist personalizzate, tutto in un'unica interfaccia semplice e intuitiva! ✨
+Benvenuto in **Spotify**, un'applicazione web progettata per rivoluzionare il modo in cui scopri, organizzi e ascolti la tua musica preferita.<br> 
+**Spotify** ti permette di esplorare album di artisti, selezionare i tuoi preferiti e creare playlist personalizzate, tutto in un'unica interfaccia semplice e intuitiva! ✨
 
 ---
 
@@ -31,11 +32,11 @@ L'applicazione è composta da:
 
 ## 🔬 Tecnologie Utilizzate
 
-- **HTML**: Per la struttura delle pagine. <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" width= "15" />
-- **CSS**: Per il design e lo stile. <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" width= "20" />
-- **JavaScript**: Per la logica e l'interattività.  <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" width= "20" /> <br>
-- **Bootstrap** : Per l'utilizzo del grid- system e di tutte le sue funzionalità visive e responsive. <img src="https://upload.vectorlogo.zone/logos/getbootstrap/images/987f8f6c-263a-47b1-a85d-853cfca215d9.svg" width= "23" /> <br>
-- **GitHub. Deckstop** : Per creare, cambiare ed unire i brench semplificando il lavoro di gruppo. <img src ="https://upload.wikimedia.org/wikipedia/commons/a/ae/Github-desktop-logo-symbol.svg" width = "20" />
+ :small_blue_diamond:  **HTML**: Per la struttura delle pagine. <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" width= "15" />
+ :small_blue_diamond:  **CSS**: Per il design e lo stile. <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" width= "20" />
+ :small_blue_diamond:  **JavaScript**: Per la logica e l'interattività.  <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" width= "20" /> <br>
+ :small_blue_diamond: **Bootstrap** : Per l'utilizzo del grid- system e di tutte le sue funzionalità visive e responsive. <img src="https://upload.vectorlogo.zone/logos/getbootstrap/images/987f8f6c-263a-47b1-a85d-853cfca215d9.svg" width= "23" /> <br>
+ :small_blue_diamond: **GitHub. Deckstop** : Per creare, cambiare ed unire i brench semplificando il lavoro di gruppo. <img src ="https://upload.wikimedia.org/wikipedia/commons/a/ae/Github-desktop-logo-symbol.svg" width = "20" />
 
 ---
 
@@ -43,21 +44,22 @@ L'applicazione è composta da:
 
 Segui questi passaggi per avviare l'applicazione:
 
-1. **Scarica i file del progetto**
-   - Assicurati di avere accesso alla cartella contenente i file HTML, CSS e JavaScript dell'applicazione.
+ :one: **Scarica i file del progetto**
+   - Assicurati di avere accesso alla cartella contenente i file HTML, CSS e JavaScript dell'applicazione. :white_check_mark:
 
-2. **Apri il file HTML principale**
-   - Utilizza un browser web per aprire il file `index.html` o il file HTML principale.
+ :two: **Apri il file HTML principale**
+   - Utilizza un browser web per aprire il file `index.html` o il file HTML principale.  :memo:
+:pencil:
 
-3. **Goditi l'esperienza **Spotify**!**
+ :three: **Goditi l'esperienza **Spotify**!**  	:dancing_men:
 
 ---
 
 ## 🚀 Come Usare <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="50" />
 
-1. **Sfoglia gli album** dalla pagina principale.  :open_file_folder:
-2. **Seleziona i tuoi album preferiti** cliccando sull'icona ❤️ accanto all'album.
-3. **Crea una playlist** aggiungendo i tuoi brani preferiti con un semplice clic.  :arrow_forward:
+ :one: **Sfoglia gli album** dalla pagina principale.  :open_file_folder:
+ :two: **Seleziona i tuoi album preferiti** cliccando sull'icona ❤️ accanto all'album.
+ :three: **Crea una playlist** aggiungendo i tuoi brani preferiti con un semplice clic.  :arrow_forward:
 
 ---
 
@@ -65,17 +67,17 @@ Segui questi passaggi per avviare l'applicazione:
 
 Ami la musica e vuoi migliorare <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="50" />? Sentiti libero di contribuire:
 
- :small_blue_diamond: Segnala bug e problemi.  :interrobang:
- :small_blue_diamond: Proponi nuove funzionalità.
- :small_blue_diamond: Migliora il design o la logica dell'applicazione.
+ :small_blue_diamond: Segnala bug e problemi.  :interrobang: <br>
+ :small_blue_diamond: Proponi nuove funzionalità.  :heavy_plus_sign: <br>
+ :small_blue_diamond: Migliora il design o la logica dell'applicazione. :game_die: <br>
 
-Per maggiori dettagli, scrivi a aziende@epicode.it :email:
+Per maggiori dettagli, scrivi a **noreply@epicode.com** :email:
 
 ---
 
 ## 📜 Licenza
 
- <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" width="50" /> &copy; è distribuito sotto la licenza di <img src ="https://github.com/user-attachments/assets/5e0ad6af-90f2-4f6f-83c0-7a2a5fd4af6c" width="15"> **Epicode** EPICODE, Via dei Magazzini Generali, 16, Roma.
+ <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" width="50" /> &copy; è distribuito sotto la licenza di <img src ="https://github.com/user-attachments/assets/5e0ad6af-90f2-4f6f-83c0-7a2a5fd4af6c" width="15"> **Epicode** , Via dei Magazzini Generali, 16, Roma.
  
 
 ---
@@ -84,14 +86,12 @@ Per maggiori dettagli, scrivi a aziende@epicode.it :email:
 
 Hai domande o feedback? 
 
-- **Contattaci:**: [support@mymusic.com](https://support.spotify.com/it/article/contact-us/)
+- **Contattaci:**: https://support.spotify.com/it/article/contact-us/
 
 
 Grazie per aver scelto <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="50" />! 🎶✨
 
-
-
-
+<img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" />
 
 
 
