@@ -7,6 +7,10 @@ let tracks = [];
 const progressBar = document.getElementById("progress-bar");
 const currentTimeLabel = document.getElementById("current-time");
 const totalTimeLabel = document.getElementById("total-time");
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+const searchResultsContainer = document.getElementById("search-results");
+
 
 async function fetchMusicData() {
   try {
@@ -103,6 +107,90 @@ audio.addEventListener("timeupdate", () => {
 // Salto traccia tramite la barra di avanzamento
 progressBar.addEventListener("input", () => {
   audio.currentTime = progressBar.value;
+});
+
+
+
+
+
+
+
+// il search iniza da qui
+async function searchSongs(query) {
+  const searchUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(query)}`;
+  
+  try {
+    const response = await fetch(searchUrl);
+    if (!response.ok) throw new Error("Errore nella ricerca");
+    
+    const data = await response.json();
+    displaySearchResults(data.data);
+  } catch (error) {
+    console.error("Errore nella ricerca:", error);
+  }
+}
+
+
+function displaySearchResults(songs) {
+  searchResultsContainer.innerHTML = "";
+  
+  songs.forEach((song) => {
+    const songElement = document.createElement("div");
+    songElement.className = "d-flex align-items-center my-2";
+
+    songElement.innerHTML = `
+      <img src="${song.album.cover_small}" alt="Album Cover" class="me-3" style="width: 50px; height: 50px;" />
+      <div class="flex-grow-1">
+        <p class="mb-0"><strong>${song.title}</strong> - ${song.artist.name}</p>
+        <small>${song.album.title}</small>
+      </div>
+      <button class="btn btn-outline-primary btn-sm play-song-btn" data-preview="${song.preview}" data-title="${song.title}" data-artist="${song.artist.name}">
+        <i class="fas fa-play"></i>
+      </button>
+    `;
+
+    searchResultsContainer.appendChild(songElement);
+  });
+
+  document.querySelectorAll(".play-song-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const preview = btn.getAttribute("data-preview");
+      const title = btn.getAttribute("data-title");
+      const artist = btn.getAttribute("data-artist");
+
+
+      playSongFromSearch(preview, title, artist);
+    });
+  });
+}
+
+
+function playSongFromSearch(preview, title, artist) {
+  document.getElementById("song-title").innerText = title;
+  document.getElementById("artist-name").innerText = artist;
+  audio.src = preview;
+  audio.play();
+  const playButton = document.querySelector(".btn-play i");
+  playButton.classList.remove("fa-play");
+  playButton.classList.add("fa-pause");
+}
+
+
+searchButton.addEventListener("click", () => {
+  const query = searchInput.value.trim();
+  if (query) {
+    searchSongs(query);
+  }
+});
+
+searchInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    const query = searchInput.value.trim();
+    if (query) {
+
+      searchSongs(query);
+    }
+  }
 });
 
 fetchMusicData();
