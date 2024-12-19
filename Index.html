@@ -61,13 +61,14 @@
                   </a>
                 </li>
                 <li class="nav-item align-self-center">
-                  <form class="d-flex bg-dark rounded-5 search" role="search">
+                  <form class="d-flex bg-dark rounded-5 search" role="search" id="navForm">
                     <button
                       class="btn"
                       type="button"
                       data-bs-toggle="tooltip"
                       data-bs-placement="bottom"
                       data-bs-title="Cerca"
+                      id="btnCerca"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +89,7 @@
                       </svg>
                     </button>
                     <input
-                      class="form-control border-0 focus-ring focus-ring-dark border-end border-1 border-secondary rounded-0 my-2 text-white"
+                      class="form-control border-0 focus-ring focus-ring-dark border-end border-1 border-secondary rounded-0 my-2 text-white" id="navInput"
                       type="search"
                       placeholder="Cosa vuoi ascoltare?"
                       aria-label="Search"
@@ -295,6 +296,9 @@
                 </li>
               </ul>
             </div>
+            <ul id="listaRicerca" class="text-white fs-5 my-3 px-3 list-unstyled">
+              <!-- STAMPA RICERCA -->
+            </ul>
           </aside>
         </div>
         <!--COMINCIA MAIN-->

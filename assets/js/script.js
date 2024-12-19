@@ -17,7 +17,11 @@ const btnBack = document.getElementById('btnBack');
 const playerBtnForward = document.getElementById('playerBtnForward');
 const playerBtnBack = document.getElementById('playerBtnBack');
 const playerImg = document.getElementById('playerImg');
-
+const navInput = document.getElementById('navInput');
+const btnCerca = document.getElementById('btnCerca');
+const listaRicerca = document.getElementById('listaRicerca');
+const navForm = document.getElementById('navForm');
+lista = [];
 
 
 const artista = Math.floor(Math.random() * 10) + 1;
@@ -213,3 +217,18 @@ async function getSongs() {
 getSongs();
 
 
+btnCerca.addEventListener('click', (e) => {
+    e.preventDefault();
+    lista.push(navInput.value);
+    visualSearch();
+})
+
+function visualSearch() {
+    listaRicerca.innerHTML = "";
+    for (let i = 0; i < lista.length; i++) {
+      let listItem = document.createElement("li");
+      listItem.innerHTML = `<i class="bi bi-search"></i> ${lista[i]}`;
+      listaRicerca.appendChild(listItem);
+      navForm.reset();
+    }
+  }
