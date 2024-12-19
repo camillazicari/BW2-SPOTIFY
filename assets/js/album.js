@@ -73,7 +73,7 @@ function printOtherAlbums() {
             for (let i=0; i<albums.length; i++) {
                 const row2 = document.getElementById('row2');
     
-                let colAlbum = `<div class="card backgroundMain" style="width: 18rem;">
+                let colAlbum = `<div class="col-2 card backgroundMain">
                                 <div class="position-relative" id="playlist">
                                     <img  width="80%" class="rounded-2 card-img-top" src="${albums[i].cover_big}" id="albumCover"/>
                                     <button type="button" class="btn rounded-circle greenSpotify border-0 position-absolute bottom-0 end-0 m-2" id="btnGreenPlay"><i class="bi bi-play-fill fs-3 ps-1 text-black"></i></button>
