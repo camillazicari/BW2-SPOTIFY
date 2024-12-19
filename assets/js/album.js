@@ -48,10 +48,10 @@ async function getAlbum() {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 210) {
                 btnPlus.classList.add('text-transition');
-                btnPlus.innerHTML = `<p class="titoloScroll m-0">${albums.title}</p>`;
+                btnPlus.innerHTML = `<p class="titoloScroll text-white m-0">${albums.title}</p>`;
             } else {
                 btnPlus.classList.remove('text-transition');
-                btnPlus.innerHTML = `<i class="bi bi-plus-circle fs-2 fw-bold text-secondary"></i>`;
+                btnPlus.innerHTML = `<i class="bi bi-plus-circle fs-2 fw-bold text-white"></i>`;
             }
         });        
 
@@ -85,7 +85,7 @@ function printOtherAlbums() {
             for (let i = 0; i < albums.length; i++) {
                 const row2 = document.getElementById('row2');
 
-                let colAlbum = `<div class="card backgroundMain col-3">
+                let colAlbum = `<div class="card bg-transparent border-0 col-3">
                                 <div class="position-relative" id="playlist">
                                     <img  width="80%" class="rounded-2 card-img-top" src="${albums[i].cover_big}" id="albumCover"/>
                                 </div>    

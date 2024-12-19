@@ -33,7 +33,7 @@ function printSongs() {
     for (let i = 0; i < tracks.length; i++) {
         const ol = document.getElementById('ol');
         let col = `                    
-                    <li class="mx-1 lineaColorata" id="btnSongTitle">
+                    <li class="mx-1 lineaGialla" id="btnSongTitle">
                         <div class="row justify-content-between">
                             <div class="card col-6 bg-transparent ms-3 my-2 border-0">
                             <div class="row g-0">
@@ -184,6 +184,7 @@ async function getAscoltatori() {
                 btnSegui.classList.remove('border');
                 btnSegui.classList.add('border-0');
                 btnSegui.innerHTML = `<p class="titoloScroll m-0">${ascoltatori.name}</p>`;
+                
             } else {
                 btnSegui.classList.add('border');
                 btnSegui.classList.remove('border-0');
