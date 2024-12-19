@@ -75,13 +75,15 @@ Per maggiori dettagli, scrivi a **noreply@epicode.com** :email:
 
 ---
 
-## Sviluppatori
+## :floppy_disk: Sviluppatori
 
  :woman_technologist:  [Camilla Zicari](https://github.com/camillazicari)
  :woman_office_worker: [Francesca Palmeri](https://github.com/Francesca-palmeri)
  :man_office_worker:   [Miguel Jano Salcedo](https://github.com/migueljano)
  :woman_technologist: [Manuela Lissia](https://github.com/M4nu3l4)
  :man_technologist: [Giovanni Ramaglia](https://github.com/cybergam3r)
+
+ <hr>
 
 
 ## 📜 Licenza
