@@ -42,7 +42,6 @@ function printSong() {
     albumRandom.innerHTML = artist.data[0].album.title;
     titoloRandom.innerHTML = artist.data[0].title;
     artistaRandom.innerHTML = artist.data[0].artist.name;
-    playerImg.setAttribute('src', artist.data[0].album.cover_big)
 }
 
 btnForward.addEventListener('click', (e) => {
@@ -63,6 +62,7 @@ getArtist();
 
 btnPlayRandom.addEventListener('click', (e) => {
     e.preventDefault();
+    playerImg.setAttribute('src', artist.data[0].album.cover_big)
     updateFooter();
 })
 // * PLAYER AUDIO
@@ -179,7 +179,7 @@ async function getSongs() {
                             </div>    
                                 <div class="card-body">
                                     <p class="mx-2 mb-0 fs-6 text-white" id="titoloAlbum">${albums[i].title}</p>
-                                    <p class="mx-2 my-0 text-white-50" id="artistaAlbum">${albums[i].artist.name}</p>  
+                                    <p class="mx-2 my-0 text-white-50 playMusicHover" id="artistaAlbum">${albums[i].artist.name}</p>  
                                 </div>
                             </div>`
             row.innerHTML += colAlbum;
@@ -193,6 +193,17 @@ async function getSongs() {
             window.location.href = newUrl;
         })
     }
+
+    const artistaAlbum = document.querySelectorAll('#artistaAlbum');
+    for (let i = 0; i < artistaAlbum.length; i++) {
+        artistaAlbum[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstUrl = 'artist.html';
+            let artistUrl = `${firstUrl}?_id=${albums[i].artist.id}`;
+            window.location.href = artistUrl;
+        })
+    }
+
         };
     } catch (error) {
         console.log('Errore durante il recupero degli album:', error);

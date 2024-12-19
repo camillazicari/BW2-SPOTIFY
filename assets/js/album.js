@@ -33,7 +33,7 @@ async function getAlbum() {
         async function getForAlbum() {
             let idArtista = albums.artist.id;
             try {
-                let response = await fetch(urlArtista + idArtista + restoUrl);                
+                let response = await fetch(urlArtista + idArtista + restoUrl);
                 if (!response.ok) throw new Error("Errore nel recupero degli album");
                 resp = await response.json();
                 console.log(resp);
@@ -52,9 +52,9 @@ async function getAlbum() {
 function printOtherAlbums() {
     let ids = [];
     for (let i = 0; i < resp.data.length; i++) {
-        ids.push(resp.data[i].album.id); 
+        ids.push(resp.data[i].album.id);
     }
-    
+
     let uniqueIds = [...new Set(ids)];
     console.log(uniqueIds);
     let idRandom = uniqueIds[Math.floor(Math.random() * uniqueIds.length)];
@@ -66,41 +66,52 @@ function printOtherAlbums() {
                 if (!response.ok) throw new Error(`Errore nel recupero dei dati per ID: ${idRandom}`);
                 return response.json();
             });
-    
+
             let albums = await Promise.all(fetchPromises);
-    
+
             console.log('RISPOSTE PER TUTTI GLI ALBUM:', albums);
-            for (let i=0; i<albums.length; i++) {
+            for (let i = 0; i < albums.length; i++) {
                 const row2 = document.getElementById('row2');
-                
+
                 let colAlbum = `<div class="card backgroundMain col-3">
                                 <div class="position-relative" id="playlist">
                                     <img  width="80%" class="rounded-2 card-img-top" src="${albums[i].cover_big}" id="albumCover"/>
                                 </div>    
                                     <div class="card-body">
                                         <p class="mx-2 mb-0 fs-6 text-white" id="titoloAlbum">${albums[i].title}</p>
-                                        <p class="mx-2 my-0 text-white-50" id="artistaAlbum">${albums[i].artist.name}</p>  
+                                        <button type="button" class="border-0 bg-transparent mx-2 my-0 text-white-50 p-0 playMusicHover" id="artistaAlbum">${albums[i].artist.name}</button>  
                                     </div>
                                 </div>`
                 row2.innerHTML += colAlbum;
-    
-        const albumCover = document.querySelectorAll('#albumCover');
-        for (let i = 0; i < albumCover.length; i++) {
-            albumCover[i].addEventListener('click', (e) => {
-                e.preventDefault();
-                let firstUrl = 'album.html';
-                let newUrl = `${firstUrl}?_id=${albums[i].id}`;
-                window.location.href = newUrl;
-            })
-        }
+
+                const albumCover = document.querySelectorAll('#albumCover');
+                for (let i = 0; i < albumCover.length; i++) {
+                    albumCover[i].addEventListener('click', (e) => {
+                        e.preventDefault();
+                        let firstUrl = 'album.html';
+                        let newUrl = `${firstUrl}?_id=${albums[i].id}`;
+                        window.location.href = newUrl;
+                    })
+                }
             };
+
+            const artistaAlbum = document.querySelectorAll('#artistaAlbum');
+            for (let i = 0; i < artistaAlbum.length; i++) {
+                artistaAlbum[i].addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let firstUrl = 'artist.html';
+                    let artistUrl = `${firstUrl}?_id=${albums[i].artist.id}`;
+                    window.location.href = artistUrl;
+                })
+            }
+
         } catch (error) {
             console.log('Errore durante il recupero degli album:', error);
         }
     }
 
     getPerLennesimaVolta()
-} 
+}
 
 
 
@@ -233,26 +244,26 @@ function printTracks() {
 
     const btnHeart = document.querySelectorAll('#btnHeart i')
 
-// Funzione per gestire il click
-function toggleHeart(e) {
-    e.preventDefault(); // Evita comportamenti predefiniti
+    // Funzione per gestire il click
+    function toggleHeart(e) {
+        e.preventDefault(); // Evita comportamenti predefiniti
 
-    const btn = e.currentTarget; // Ottieni il bottone cliccato
-    if (btn.classList.contains('bi-heart')) {
-        // Se ha la classe 'bi-heart', cambiala in 'bi-heart-fill'
-        btn.classList.remove('bi-heart');
-        btn.classList.add('bi-heart-fill');
-    } else if (btn.classList.contains('bi-heart-fill')) {
-        // Se ha la classe 'bi-heart-fill', cambiala in 'bi-heart'
-        btn.classList.remove('bi-heart-fill');
-        btn.classList.add('bi-heart');
+        const btn = e.currentTarget; // Ottieni il bottone cliccato
+        if (btn.classList.contains('bi-heart')) {
+            // Se ha la classe 'bi-heart', cambiala in 'bi-heart-fill'
+            btn.classList.remove('bi-heart');
+            btn.classList.add('bi-heart-fill');
+        } else if (btn.classList.contains('bi-heart-fill')) {
+            // Se ha la classe 'bi-heart-fill', cambiala in 'bi-heart'
+            btn.classList.remove('bi-heart-fill');
+            btn.classList.add('bi-heart');
+        }
     }
-}
 
-// Aggiungi il listener di click a ciascun bottone
-btnHeart.forEach((btn) => {
-    btn.addEventListener('click', toggleHeart);
-});
+    // Aggiungi il listener di click a ciascun bottone
+    btnHeart.forEach((btn) => {
+        btn.addEventListener('click', toggleHeart);
+    });
 
     const btnArtistiName = document.querySelectorAll('#btnArtistiName');
     for (let i = 0; i < btnArtistiName.length; i++) {
@@ -270,6 +281,7 @@ btnHeart.forEach((btn) => {
         let artistUrl = `${firstUrl}?_id=${tracks[0].artist.id}`;
         window.location.href = artistUrl;
     })
+
 
 }
 

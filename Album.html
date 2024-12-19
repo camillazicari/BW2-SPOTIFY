@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="position-sticky top-0 z-2">
       <nav class="navbar navbar-expand bg-black" data-bs-theme="dark">
         <div class="container-fluid justify-content-xxl-between">
           <div class="row w-100 m-0 justify-content-between">
@@ -384,7 +384,7 @@
 
 
           <div class="container">
-            <div class="row justify-content-evenly" id="row2">
+            <div class="row justify-content-evenly flex-nowrap" id="row2">
               <!--Qui vanno inserite le "card" dal JS-->
             </div>
           </div>
@@ -574,7 +574,7 @@
           </div>
 
           <!-- Controllo Volume -->
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center" id="volume">
             <i class="fas fa-volume-down text-white me-2"></i>
             <input
               type="range"
