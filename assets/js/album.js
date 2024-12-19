@@ -19,6 +19,7 @@ const linkToArtist = document.getElementById('linkToArtist');
 const btnCiccio = document.getElementById('btnCiccio');
 const row2 = document.getElementById('row2');
 const btnPlus = document.querySelector('.btnPlus');
+const stickyAlbum = document.getElementById('stickyAlbum');
 
 let currentTrackIndex = 0;
 let audio = new Audio();
@@ -49,9 +50,11 @@ async function getAlbum() {
             if (window.scrollY > 210) {
                 btnPlus.classList.add('text-transition');
                 btnPlus.innerHTML = `<p class="titoloScroll text-white m-0">${albums.title}</p>`;
+                stickyAlbum.classList.add('stickyMagenta')
             } else {
                 btnPlus.classList.remove('text-transition');
-                btnPlus.innerHTML = `<i class="bi bi-plus-circle fs-2 fw-bold text-white"></i>`;
+                btnPlus.innerHTML = `<i class="bi bi-plus-circle fs-2 fw-bold text-white opacity-75"></i>`;
+                stickyAlbum.classList.remove('stickyMagenta')
             }
         });        
 
@@ -148,15 +151,15 @@ function printTracks() {
         const minutes = Math.floor((seconds % 3600) / 60);
         let colTracks = `
         <li>
-        <div class="row lineaColorata w-100" id="row">
+        <div class="row lineaMagenta w-100" id="row">
             <div class="mb-3 col-6 bg-transparent d-flex flex-column align-items-start pt-4">
                 <button class="border-0 bg-transparent p-0 ps-3" id="btnSongTitle"><h6 class="text-white playMusicHover text-start">${tracks[i].title}</h6></button>
-                <button class="border-0 bg-transparent p-0 ps-3" id="btnArtistiName"><p class="text-secondary playMusicHover">${tracks[i].artist.name}</p></button>
+                <button class="border-0 bg-transparent p-0 ps-3" id="btnArtistiName"><p class="text-white opacity-75 playMusicHover">${tracks[i].artist.name}</p></button>
             </div>
-            <div class="mb-3 col-6 bg-transparent text-end align-self-center text-secondary fw-light">
+            <div class="mb-3 col-6 bg-transparent text-end align-self-center text-white opacity-75 fw-light">
             <div class="row justify-content-end">
             <div class="col-3">
-            <button type="button" class="border-0 bg-transparent text-secondary p-0 fs-5" id="btnHeart"><i class="bi bi-heart"></i></button>
+            <button type="button" class="border-0 bg-transparent text-white opacity-75 p-0 fs-5" id="btnHeart"><i class="bi bi-heart"></i></button>
             </div>
             <div class="col-3">
             <p>${minutes} min ${seconds} sec</p>

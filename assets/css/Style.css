@@ -352,6 +352,7 @@ footer ul li {
 
 .bi-plus-circle:hover {
   color: white !important;
+  transform: scaleX(2) scaleY(2) !important;
 }
 
 .elenco:hover {
@@ -459,6 +460,11 @@ background: linear-gradient(180deg, rgba(207,32,82) 0%, rgba(18,18,18) 50%);
 .stickyMagenta{
   background: rgb(207,32,82);
 background: linear-gradient(180deg, #9F1C42,#7A1935);
+}
+
+.lineaMagenta:hover {
+  background-color: rgba(246, 50, 106, 0.824);
+  border-radius: 8px;
 }
 
 .titoloScroll {
