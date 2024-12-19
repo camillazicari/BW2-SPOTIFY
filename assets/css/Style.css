@@ -516,3 +516,12 @@ background: linear-gradient(180deg, #9F1C42,#7A1935);
 .text-transition .titoloScroll {
   opacity: 1; /* Mostra il testo con transizione */
 }
+
+#search-results {
+  overflow: auto;
+  max-height: 50vh !important;
+}
+
+#search-results::-webkit-scrollbar {
+  display: none;
+}
