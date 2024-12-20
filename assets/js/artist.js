@@ -290,6 +290,7 @@ function displaySearchResults(songs) {
                 <button
                   class="btn rounded-circle btn-outline-light btn-sm play-song-btn"
                   style="width: 40px; height:40px"
+                  data-image="${songs[i].album.cover_big}"
                   data-preview="${songs[i].preview}"
                   data-title="${songs[i].title}"
                   data-artist="${songs[i].artist.name}"
@@ -347,17 +348,19 @@ function displaySearchResults(songs) {
 
     document.querySelectorAll(".play-song-btn").forEach((btn) => {
         btn.addEventListener("click", (e) => {
+            const image = btn.getAttribute("data-image");
             const preview = btn.getAttribute("data-preview");
             const title = btn.getAttribute("data-title");
             const artist = btn.getAttribute("data-artist");
 
-            playSongFromSearch(preview, title, artist);
+            playSongFromSearch(image, preview, title, artist);
         });
     });
 }
 
 
-function playSongFromSearch(preview, title, artist) {
+function playSongFromSearch(image, preview, title, artist) {
+    playerImg.src = image;
     document.getElementById("song-title").innerText = title;
     document.getElementById("artist-name").innerText = artist;
     audio.src = preview;
