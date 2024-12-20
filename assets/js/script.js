@@ -1,5 +1,5 @@
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
 let artist;
 const coverRandom = document.getElementById('coverRandom');
@@ -120,6 +120,7 @@ function pauseMusic() {
 audio.addEventListener("ended", () => {
     nextTrack();
 });
+
 // Passa al brano successivo
 function nextTrack() {
     currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
@@ -161,11 +162,10 @@ progressBar.addEventListener("input", () => {
     audio.currentTime = progressBar.value;
 });
 
+// TODO: ALBUM
 
 let id = [6047452, 75621062, 352412657, 15103893, 6157080, 286549802, 522318972, 1346746, 119606, 49736572, 547520122, 1262014, 68346981, 6155526];
 let idRandom = id[Math.floor(Math.random() * id.length)];
-
-url2 = `https://striveschool-api.herokuapp.com/api/deezer/album/${idRandom}`;
 
 
 async function getSongs() {
@@ -195,6 +195,7 @@ async function getSongs() {
                             </div>`
             row.innerHTML += colAlbum;
 
+            //CLICK FOTO ALBUM CHE PORTA ALLA PAGINA ALBUM
             const albumCover = document.querySelectorAll('#albumCover');
             for (let i = 0; i < albumCover.length; i++) {
                 albumCover[i].addEventListener('click', (e) => {
@@ -205,6 +206,7 @@ async function getSongs() {
                 })
             }
 
+            //CLICK NOME ARTISTA ALBUM CHE PORTA ALLA PAGINA ARTISTI
             const artistaAlbum = document.querySelectorAll('#artistaAlbum');
             for (let i = 0; i < artistaAlbum.length; i++) {
                 artistaAlbum[i].addEventListener('click', (e) => {
@@ -222,6 +224,7 @@ async function getSongs() {
 }
 
 getSongs();
+
 
 // TODO: STAMPA ARTISTI
 
@@ -254,6 +257,7 @@ async function getArtisti() {
                             </div>`
             rowArtisti.innerHTML += colArtisti;
 
+            //CLICK FOTO ARTISTA X ANDARE A PAGINA ARTISTA
             const artistCover = document.querySelectorAll('#artistCover');
             for (let i = 0; i < artistCover.length; i++) {
                 artistCover[i].addEventListener('click', (e) => {
@@ -264,6 +268,7 @@ async function getArtisti() {
                 })
             }
 
+            //CLICK NOME ARTISTA X ANDARE A PAGINA ARTISTA
             const artistAlbum = document.querySelectorAll('#artistAlbum');
             for (let i = 0; i < artistAlbum.length; i++) {
                 artistAlbum[i].addEventListener('click', (e) => {
@@ -283,7 +288,7 @@ getArtisti();
 
 
 
-
+//SECONDA RIGA ARTISTI
 
 let idArtisti2 = [4138, 108153772, 3, 66, 12436, 9635624, 1147, 196, 1562681, 98, 52115362, 390032, 74398, 927];
 let idArtistiRandom2 = idArtisti2[Math.floor(Math.random() * idArtisti2.length)];
@@ -361,7 +366,6 @@ async function searchSongs(query) {
 
         displaySearchResults(data.data);
 
-        displaySearchResults(data.data);
     } catch (error) {
         console.error("Errore nella ricerca:", error);
     }
@@ -450,10 +454,9 @@ function displaySearchResults(songs) {
 
         };
     } else {
-
         searchResultsContainer.innerHTML = `<div class="alert alert-danger d-flex align-items-center"id="alert"  role="alert">
         <i class="bi bi-exclamation-triangle-fill"></i>
-        <div>&nbsp; La tua ricerca non ha prodotto risultati</div>
+        <div>&nbsp; Nessun risultato</div>
       </div>`
 
     }

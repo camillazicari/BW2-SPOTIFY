@@ -1,3 +1,7 @@
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+
 const newUrl = new URLSearchParams(window.location.search);
 const albumId = newUrl.get('_id');
 const urlArtista = `https://striveschool-api.herokuapp.com/api/deezer/artist/`
@@ -341,7 +345,7 @@ function displaySearchResults(songs) {
 
         searchResultsContainer.innerHTML = `<div class="alert alert-danger d-flex align-items-center"id="alert"  role="alert">
         <i class="bi bi-exclamation-triangle-fill"></i>
-        <div>&nbsp; La tua ricerca non ha prodotto risultati</div>
+        <div>&nbsp; Nessun risultato</div>
       </div>`
 
     }
