@@ -1,8 +1,8 @@
 
-## SPOTIFY
+## SPOTIFY CLONE
 ### Descrizione
-#### Benvenuti in :grin:
-🎶 **SPOTIFY** – Il tuo mondo musicale personalizzato 🎵
+#### Benvenuti in 
+🎶 **<img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="70" /> CLONE** – Il tuo mondo musicale personalizzato 🎵
 
 Benvenuto in **Spotify**, un'applicazione web progettata per rivoluzionare il modo in cui scopri, organizzi e ascolti la tua musica preferita.<br> 
 **Spotify** ti permette di esplorare album di artisti e selezionare i tuoi preferiti tutto in un'unica interfaccia semplice e intuitiva! ✨ <br> 
@@ -23,9 +23,9 @@ L'applicazione è composta da: <br>
 
 • **Sfoglia gli album**: Esplora un'ampia gamma di album dei tuoi artisti preferiti. 🎵 <br> 
 
-• **Seleziona i tuoi preferiti**: Salva gli album che ami di più per accedervi rapidamente. ❤️ <br> 
+• **Seleziona i tuoi preferiti**: Seleziona gli album che ami di più. ❤️ <br> 
 
-• **Crea playlist personalizzate**: Combina i tuoi brani preferiti in playlist uniche. 🔗 <br> 
+• **Ascolta i brani dei tuoi artisti preferiti**: Noi ti mettiamo a disposizione una piccola selezione di artisti <br> &nbsp; popolari, ma puoi cercare nell'apposita barra di navigazione chiunque tu voglia. 🎤	<br>
 
 • **Design responsive**: Funziona perfettamente su desktop, tablet e dispositivi mobili. 📱 <br> 
 
@@ -33,11 +33,11 @@ L'applicazione è composta da: <br>
 
 ## 🔬 Tecnologie Utilizzate
 
- :small_blue_diamond:  **HTML**: Per la struttura delle pagine. <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" width= "15" /> <br> 
- :small_blue_diamond:  **CSS**: Per il design e lo stile. <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" width= "20" /> <br> 
- :small_blue_diamond:  **JavaScript**: Per la logica e l'interattività.  <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" width= "20" /> <br>
- :small_blue_diamond: **Bootstrap** : Per l'utilizzo del grid- system e di tutte le sue funzionalità visive e responsive. <img src="https://upload.vectorlogo.zone/logos/getbootstrap/images/987f8f6c-263a-47b1-a85d-853cfca215d9.svg" width= "23" /> <br>
- :small_blue_diamond: **GitHub. Deckstop** : Per creare, cambiare ed unire i brench semplificando il lavoro di gruppo. <img src ="https://upload.wikimedia.org/wikipedia/commons/a/ae/Github-desktop-logo-symbol.svg" width = "20" /> <br> 
+ <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" width= "20" /> &nbsp;  **HTML**: Per la struttura delle pagine. <br> 
+ <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" width= "20" />  &nbsp; **CSS**: Per il design e lo stile. <br> 
+ <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" width= "20" /> &nbsp; **JavaScript**: Per la logica e l'interattività. <br>
+ <img src="https://upload.vectorlogo.zone/logos/getbootstrap/images/987f8f6c-263a-47b1-a85d-853cfca215d9.svg" width= "23" /> &nbsp; **Bootstrap** : Per l'utilizzo del grid-system e di tutte le sue funzionalità visive e responsive. <br>
+ <img src ="https://upload.wikimedia.org/wikipedia/commons/a/ae/Github-desktop-logo-symbol.svg" width = "23" /> &nbsp; **GitHub. Deckstop** : Per creare, cambiare ed unire i brench semplificando il lavoro di gruppo. <br> 
 
 ---
 
@@ -50,23 +50,23 @@ Segui questi passaggi per avviare l'applicazione: <br>
 
  :two: **Apri il file HTML principale** <br> 
    - Utilizza un browser web per aprire il file `index.html` o il file HTML principale.  :memo: <br> 
-:pencil:
 
  :three: **Goditi l'esperienza **Spotify**!**  	:dancing_men: <br> 
 
 ---
 
-## 🚀 Come Usare <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="50" /> <br> 
+## 🚀 Come Usare <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="50" /> clone <br> 
 
  :one: **Sfoglia gli album** dalla pagina principale.  :open_file_folder: <br> 
- :two: **Seleziona i tuoi album preferiti** cliccando sull'icona ❤️ accanto all'album. <br> 
- :three: **Crea una playlist** aggiungendo i tuoi brani preferiti con un semplice clic.  :arrow_forward:  <br> 
+ :two: **Seleziona i tuoi brani preferiti** cliccando sull'icona ❤️ accanto alle canzoni dell'album.<br> 
+ :three: **Sfoglia gli artisti** dalla pagina principale. 👩‍🎤	<br>
+ :four: **Cerca i brani che piu ti piacciono** nella barra di navigazione disponibile in tutte le pagine. 🔎	<br>
 
 ---
 
 ## 🎉 Contribuisci al Progetto <br> 
 
-Ami la musica e vuoi migliorare <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="50" />? Sentiti libero di contribuire: <br> 
+Ami la musica e vuoi migliorare <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="50" /> clone? Sentiti libero di contribuire: <br> 
 
  :small_blue_diamond: Segnala bug e problemi.  :interrobang: <br>
  :small_blue_diamond: Proponi nuove funzionalità.  :heavy_plus_sign: <br>
@@ -89,21 +89,11 @@ Per maggiori dettagli, scrivi a **noreply@epicode.com** :email: <br>
 
 ## 📜 Licenza <br> 
 
- <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" width="50" /> &copy; è distribuito sotto la licenza di <img src ="https://github.com/user-attachments/assets/5e0ad6af-90f2-4f6f-83c0-7a2a5fd4af6c" width="15"> **Epicode** , Via dei Magazzini Generali, 16, Roma. <br> 
+Questa applicazione è distribuita sotto la licenza del <img src ="https://github.com/user-attachments/assets/5e0ad6af-90f2-4f6f-83c0-7a2a5fd4af6c" width="15">  **Team 2**, classe FS0924. <br> 
  
 
 ---
 
-## 📢 Contatti
-
-Hai domande o feedback? 
-
-- **Contattaci:**: https://support.spotify.com/it/article/contact-us/ <br> 
-
-
-Grazie per aver scelto <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" alt="Animazione di esempio" width="50" />! 🎶✨ <br> 
-<br> 
-<br> 
 <img src="https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" />
 
 
