@@ -454,13 +454,3 @@ searchButton.addEventListener("click", () => {
     }
     navForm.reset();
 });
-/* searchInput.addEventListener("keypress", (e) => {
-   if (e.key === "Enter") {
-     const query = searchInput.value.trim();
-     if (query) {
- 
-       searchSongs(query);
-     }
-   }
- });*/
-
