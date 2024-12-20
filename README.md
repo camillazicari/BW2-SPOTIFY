@@ -1,4 +1,4 @@
- <img src="https://pixabay.com/it/illustrations/alberi-di-natale-sfondo-disegno-7576912/">
+
 ## SPOTIFY
 ### Descrizione
 #### Benvenuti in :grin:
