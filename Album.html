@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="position-sticky top-0 z-2">
       <nav class="navbar navbar-expand bg-black" data-bs-theme="dark">
         <div class="container-fluid justify-content-xxl-between">
           <div class="row w-100 m-0 justify-content-between">
@@ -61,13 +61,14 @@
                   </a>
                 </li>
                 <li class="nav-item align-self-center">
-                  <form class="d-flex bg-dark rounded-5 search" role="search">
+                  <form class="d-flex bg-dark rounded-5 search" role="search" id="navForm">
                     <button
                       class="btn"
                       type="button"
                       data-bs-toggle="tooltip"
                       data-bs-placement="bottom"
                       data-bs-title="Cerca"
+                      id="search-button"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +93,7 @@
                       type="search"
                       placeholder="Cosa vuoi ascoltare?"
                       aria-label="Search"
+                      id="search-input"
                     />
                     <button
                       class="btn search d-flex align-items-center justify-content-end"
@@ -234,7 +236,7 @@
           class="col-md-3 p-0 backgroundMain rounded-3 border-end border-5 border-black"
         >
           <!--QUI CI VA L'ASIDE-->
-          <aside class="p-3">
+          <aside class="p-3 stickyAside">
             <div>
               <ul class="list-unstyled text-white row">
                 <li class="asideItem mb-2 col-12">
@@ -295,10 +297,20 @@
                 </li>
               </ul>
             </div>
+
+
+              <!-- STAMPA RICERCA -->
+              <h4 class="text-white-50 py-2">Risultati di ricerca:</h4>
+              <div id="search-results" class="container my-2 text-white p-0">
+
+              </div>
+
+
+
           </aside>
         </div>
         <!--COMINCIA MAIN-->
-        <main class="col-md-9 backgroundMain text-white rounded-3 g-2">
+        <main class="col-md-9 mainMagenta text-white rounded-3 g-2 p-0">
           <div class="container m-2">
             <div class="row justify-content-start">
               <div
@@ -339,9 +351,9 @@
             </div>
           </div>
 
-          <div class="position-sticky top-0 z-1 backgroundMain w-100 pe-1">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="m-3">
+          <div class="stickyAlbum bg-transparent z-1 w-100 pe-1" id="stickyAlbum">
+            <div class="d-flex justify-content-between align-items-center bg-transparent">
+              <div class=" d-flex align-items-center">
                 <button
                   type="button"
                   class="btn rounded-circle greenSpotify btnCiccio mx-2 my-1"
@@ -351,12 +363,12 @@
                 </button>
                 <button
                   type="button"
-                  class="btn rounded-5 fw-bold bg-transparent text-white px-3 py-1 mx-2 my-1 btnPlus"
+                  class="bg-transparent border-0 rounded-5 fw-bold bg-transparent text-dark px-3 py-1 mx-2 my-1 btnPlus align-self-center"
                 >
-                  <i class="bi bi-plus-circle fs-2 fw-bold text-secondary"></i>
+                  <i class="bi bi-plus-circle  fs-2 fw-bold text-white opacity-75"></i>
                 </button>
               </div>
-              <div class="m-3 d-flex align-items-center text-secondary elenco">
+              <div class="m-3 d-flex align-items-center text-white opacity-75 elenco">
                 <p class="m-0 me-2">Elenco</p>
                 <i class="bi bi-list-ul p-0 fs-4 pt-1"></i>
               </div>
@@ -366,11 +378,11 @@
               <div class="row">
                 <div class="col-12 p-0">
                   <ul
-                    class="titoloBraniAlbum list-unstyled d-flex text-secondary fw-light justify-content-between border-bottom border-secondary pb-2 w-100"
+                    class="titoloBraniAlbum list-unstyled d-flex text-white opacity-75 fw-light justify-content-between border-bottom border-white pb-2 w-100"
                   >
                     <li class="list m-0 px-1"># &nbsp; &nbsp; Titolo</li>
                     <li class="clock">
-                      <i class="bi bi-clock"></i>
+                      <i class="bi bi-clock text-white opacity-75"></i>
                     </li>
                   </ul>
                 </div>
@@ -382,8 +394,9 @@
             <ol class="col-12 p-3" id="row"></ol>
           </div>
 
+
           <div class="container">
-            <div class="row justify-content-evenly" id="row2">
+            <div class="row justify-content-evenly flex-nowrap" id="row2">
               <!--Qui vanno inserite le "card" dal JS-->
             </div>
           </div>
@@ -573,7 +586,7 @@
           </div>
 
           <!-- Controllo Volume -->
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center" id="volume">
             <i class="fas fa-volume-down text-white me-2"></i>
             <input
               type="range"

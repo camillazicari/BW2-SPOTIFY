@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="position-sticky top-0 z-2">
       <nav class="navbar navbar-expand bg-black" data-bs-theme="dark">
         <div class="container-fluid justify-content-xxl-between">
           <div class="row w-100 m-0 justify-content-between">
@@ -61,13 +61,14 @@
                   </a>
                 </li>
                 <li class="nav-item align-self-center">
-                  <form class="d-flex bg-dark rounded-5 search" role="search">
+                  <form class="d-flex bg-dark rounded-5 search" role="search" id="navForm">
                     <button
                       class="btn"
                       type="button"
                       data-bs-toggle="tooltip"
                       data-bs-placement="bottom"
                       data-bs-title="Cerca"
+                      id="search-button"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +93,7 @@
                       type="search"
                       placeholder="Cosa vuoi ascoltare?"
                       aria-label="Search"
+                      id="search-input"
                     />
                     <button
                       class="btn search d-flex align-items-center justify-content-end"
@@ -234,7 +236,7 @@
           class="col-md-3 p-0 backgroundMain rounded-3 border-end border-5 border-black"
         >
           <!--QUI CI VA L'ASIDE-->
-          <aside class="p-3">
+          <aside class="p-3 stickyAside">
             <div>
               <ul class="list-unstyled text-white row">
                 <li class="asideItem mb-2 col-12">
@@ -295,52 +297,88 @@
                 </li>
               </ul>
             </div>
+            <div>
+
+              <!-- STAMPA RICERCA -->
+              <h4 class="text-white-50 py-2">Risultati di ricerca:</h4>
+              <div id="search-results" class="container my-2 text-white p-0">
+
+              </div>
+            </div>
           </aside>
         </div>
         <!--COMINCIA MAIN-->
-        <main class="col-md-9 backgroundMain text-white rounded-3 g-2">
-            
-           <div class="contenitoreImg card object-fit-contain overflow-hidden position-relative border-0">
-            <img src="https://cdn-images.dzcdn.net/images/artist/581693b4724a7fcfa754455101e13a44/1000x1000-000000-80-0-0.jpg" alt="" class="w-100 position-absolute card-img">
-            <div class="card-img-overlay text-white d-flex flex-column justify-content-end">
-                <p class="card-text fw-light mb-0"><svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img" aria-hidden="true" class="Svg-sc-ytk21e-0 ZxtYq b0NcxAbHvRbqgs2S8QDg me-2" style="fill: #4BB3FF; width: 25px" viewBox="0 0 24 24"><path d="M10.814.5a1.658 1.658 0 0 1 2.372 0l2.512 2.572 3.595-.043a1.658 1.658 0 0 1 1.678 1.678l-.043 3.595 2.572 2.512c.667.65.667 1.722 0 2.372l-2.572 2.512.043 3.595a1.658 1.658 0 0 1-1.678 1.678l-3.595-.043-2.512 2.572a1.658 1.658 0 0 1-2.372 0l-2.512-2.572-3.595.043a1.658 1.658 0 0 1-1.678-1.678l.043-3.595L.5 13.186a1.658 1.658 0 0 1 0-2.372l2.572-2.512-.043-3.595a1.658 1.658 0 0 1 1.678-1.678l3.595.043L10.814.5zm6.584 9.12a1 1 0 0 0-1.414-1.413l-6.011 6.01-1.894-1.893a1 1 0 0 0-1.414 1.414l3.308 3.308 7.425-7.425z"/><path xmlns="http://www.w3.org/2000/svg" d="M10.814.5a1.658 1.658 0 0 1 2.372 0l2.512 2.572 3.595-.043a1.658 1.658 0 0 1 1.678 1.678l-.043 3.595 2.572 2.512c.667.65.667 1.722 0 2.372l-2.572 2.512.043 3.595a1.658 1.658 0 0 1-1.678 1.678l-3.595-.043-2.512 2.572a1.658 1.658 0 0 1-2.372 0l-2.512-2.572-3.595.043a1.658 1.658 0 0 1-1.678-1.678l.043-3.595L.5 13.186a1.658 1.658 0 0 1 0-2.372l2.572-2.512-.043-3.595a1.658 1.658 0 0 1 1.678-1.678l3.595.043L10.814.5zm6.584 9.12a1 1 0 0 0-1.414-1.413l-6.011 6.01-1.894-1.893a1 1 0 0 0-1.414 1.414l3.308 3.308 7.425-7.425z"/></svg>Artista verificato</p>
-                <h5 class="card-title display-2 fw-bold">Card title</h5>
-                <p class="card-text fw-light"><small>Last updated 3 mins ago</small></p>
-              </div>
-           </div>
-           <div class="m-3">
-            <button type="button" class="btn rounded-circle greenSpotify btnCiccio mx-2 my-1"><i class="bi bi-play-fill fs-3 ps-1 text-black"></i></button>
-            <button
-                  type="button"
-                  class="rounded-5 fw-bold bg-transparent border border-secondary text-white px-3 py-1 mx-2 my-1" id="btnSegui"
+        <main class="col-md-9 backgroundArtist text-white rounded-3 g-2 p-0">
+          <div
+            class="contenitoreImg card object-fit-cover overflow-hidden position-relative border-0 w-100"
+          >
+            <img
+              src=""
+              alt=""
+              class="w-100 position-absolute card-img img-fluid"
+              id="backgroundArtist"
+            />
+            <div
+              class="card-img-overlay text-white d-flex flex-column justify-content-end"
+            >
+              <p class="card-text fw-light mb-0 shadows" id="verificato">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-encore-id="icon"
+                  role="img"
+                  aria-hidden="true"
+                  class="Svg-sc-ytk21e-0 ZxtYq b0NcxAbHvRbqgs2S8QDg me-2"
+                  style="fill: #4bb3ff; width: 25px"
+                  viewBox="0 0 24 24"
                 >
-                  Segui
-                </button>
-           </div>
-           <div class="m-3">
-            <h2 class="mx-2">Popolari</h2>
-            <div class="row mx-2">
-                <ol class="col-12 mx-3">
-                    <li>
-                        <div class="row">
-                            <div class="card mb-3 col-6 bg-transparent">
-                            <div class="row g-0">
-                              <div class="col-2 d-flex align-items-center">
-                                <img src="https://cdn-images.dzcdn.net/images/cover/e50540d7f752c93e0695ebae272be0c3/56x56-000000-80-0-0.jpg" class="img-fluid rounded-3" alt="...">
-                              </div>
-                              <div class="col-8">
-                                <div class="card-body">
-                                  <h5 class="card-title text-white">Titolo</h5>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                    </li>
-                </ol>
+                  <path
+                    d="M10.814.5a1.658 1.658 0 0 1 2.372 0l2.512 2.572 3.595-.043a1.658 1.658 0 0 1 1.678 1.678l-.043 3.595 2.572 2.512c.667.65.667 1.722 0 2.372l-2.572 2.512.043 3.595a1.658 1.658 0 0 1-1.678 1.678l-3.595-.043-2.512 2.572a1.658 1.658 0 0 1-2.372 0l-2.512-2.572-3.595.043a1.658 1.658 0 0 1-1.678-1.678l.043-3.595L.5 13.186a1.658 1.658 0 0 1 0-2.372l2.572-2.512-.043-3.595a1.658 1.658 0 0 1 1.678-1.678l3.595.043L10.814.5zm6.584 9.12a1 1 0 0 0-1.414-1.413l-6.011 6.01-1.894-1.893a1 1 0 0 0-1.414 1.414l3.308 3.308 7.425-7.425z"
+                  />
+                  <path
+                    xmlns="http://www.w3.org/2000/svg"
+                    d="M10.814.5a1.658 1.658 0 0 1 2.372 0l2.512 2.572 3.595-.043a1.658 1.658 0 0 1 1.678 1.678l-.043 3.595 2.572 2.512c.667.65.667 1.722 0 2.372l-2.572 2.512.043 3.595a1.658 1.658 0 0 1-1.678 1.678l-3.595-.043-2.512 2.572a1.658 1.658 0 0 1-2.372 0l-2.512-2.572-3.595.043a1.658 1.658 0 0 1-1.678-1.678l.043-3.595L.5 13.186a1.658 1.658 0 0 1 0-2.372l2.572-2.512-.043-3.595a1.658 1.658 0 0 1 1.678-1.678l3.595.043L10.814.5zm6.584 9.12a1 1 0 0 0-1.414-1.413l-6.011 6.01-1.894-1.893a1 1 0 0 0-1.414 1.414l3.308 3.308 7.425-7.425z"
+                  />
+                </svg>
+                Artista verificato
+              </p>
+              <h5 class="card-title display-2 fw-bold" id="nomeArtista">
+                Card title
+              </h5>
+              <p class="card-text fw-light" id="ascoltatoriMensili">
+                <small>Last updated 3 mins ago</small>
+              </p>
             </div>
-           </div>
+          </div>
+          <div class="my-3 stickyAlbum stickyGiallo z-1 w-100 d-flex py-2">
+            <button
+              type="button"
+              class="btn rounded-circle greenSpotify btnCiccio mx-2 my-1"
+            >
+              <i
+                class="bi bi-play-fill fs-3 ps-1 text-black"
+                id="btnCiccio"
+              ></i>
+            </button>
+            <button
+              type="button"
+              class="rounded-5 fw-bold bg-transparent border border-secondary text-white px-3 py-1 mx-2 my-1 btnSegui align-self-center"
+              id="btnSegui"
+            >
+              Segui
+            </button>
+          </div>
+          <div class="m-3">
+            <h2 class="mx-2">Popolari</h2>
+            <div class="row">
+              <ol class="col-12" id="ol"></ol>
+            </div>
+            <button
+              class="btn bg-transparent border-0 text-secondary"
+              id="toggleButton"
+            >
+              Mostra di più
+            </button>
+          </div>
 
           <footer
             class="container-fluid text-white backgroundMain d-flex justify-content-center mt-4"
@@ -478,9 +516,14 @@
           class="container-fluid d-flex justify-content-between align-items-center"
         >
           <!-- Informazioni brano -->
-          <div>
-            <p class="mb-0" id="song-title">Titolo</p>
-            <small id="artist-name">Artista</small>
+          <div class="d-flex align-items-center">
+            <div class="playerImg me-2">
+              <img src="" alt="" class="w-100 rounded-3" id="playerImg" />
+            </div>
+            <div>
+              <p class="mb-0" id="song-title">Titolo</p>
+              <small id="artist-name">Artista</small>
+            </div>
           </div>
 
           <!-- Bottoni Player -->
@@ -522,7 +565,7 @@
           </div>
 
           <!-- Controllo Volume -->
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center" id="volume">
             <i class="fas fa-volume-down text-white me-2"></i>
             <input
               type="range"
