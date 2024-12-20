@@ -94,23 +94,27 @@ function updateFooter() {
 // Riproduzione di un brano
 function playMusic() {
     audio.src = artist.data[0].preview;
+    
+
     audio.play();
 
     // pulsante Play in Pause
     const playButton = document.querySelector(".btn-play i");
     playButton.classList.remove("fa-play");
     playButton.classList.add("fa-pause");
+    
     updateFooter();
 }
 
 // Pausa
 function pauseMusic() {
     audio.pause();
-
+    
     //pulsante Pause in Play
     const playButton = document.querySelector(".btn-play i");
     playButton.classList.remove("fa-pause");
     playButton.classList.add("fa-play");
+    
 }
 
 audio.addEventListener("ended", () => {
@@ -149,6 +153,7 @@ document.querySelector(".btn-previous").addEventListener("click", previousTrack)
 audio.addEventListener("timeupdate", () => {
     progressBar.value = audio.currentTime;
     currentTimeLabel.innerText = formatTime(audio.currentTime);
+    savePlayerState();
 });
 
 // Salto traccia tramite la barra di avanzamento
@@ -371,17 +376,45 @@ function displaySearchResults(songs) {
 
         for (let i = 0; i < songs.length; i++) {
             const songElement = document.createElement("div");
-            songElement.className = "d-flex align-items-center my-2";
 
             songElement.innerHTML = `
-          <img src="${songs[i].album.cover_small}" alt="Album Cover" class="me-3" id="searchAlbum" style="width: 50px; height: 50px;" />
-          <div class="flex-grow-1">
-            <p class="mb-0"><strong id="searchTitle">${songs[i].title}</strong> - <span id="searchArtist">${songs[i].artist.name}</span></p>
-            <small id="pointerAlbum">${songs[i].album.title}</small>
+<div class="card mb-3 bg-transparent text-white border-0" id="searchCard">
+      <div class="row g-0 align-items-center">
+        <div class="col-3">
+          <img
+            src="${songs[i].album.cover_big}"
+            alt="Album Cover"
+            class="me-3 rounded-2 w-100"
+            id="searchAlbum"
+          />
+        </div>
+        <div class="col-9">
+          <div class="card-body py-0">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-9 align-self-center">
+                <p class="mb-1 asideFont">
+                  <strong id="searchTitle">${songs[i].title}</strong> <br/>
+                  <span class="fst-italic" id="searchArtist">${songs[i].artist.name}</span>
+                </p>
+                <p class="m-0 pointerAlbum" id="pointerAlbum">${songs[i].album.title}</p>
+              </div>
+              <div class="col-2 p-0">
+                <button
+                  class="btn rounded-circle btn-outline-light btn-sm play-song-btn"
+                  style="width: 40px; height:40px"
+                  data-preview="${songs[i].preview}"
+                  data-title="${songs[i].title}"
+                  data-artist="${songs[i].artist.name}"
+                >
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
+            </div>
           </div>
-          <button class="btn btn-outline-primary btn-sm play-song-btn" data-preview="${songs[i].preview}" data-title="${songs[i].title}" data-artist="${songs[i].artist.name}">
-            <i class="fas fa-play"></i>
-          </button>
+        </div>
+      </div>
+    </div>
+
         `;
             searchResultsContainer.appendChild(songElement);
 

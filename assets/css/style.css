@@ -59,7 +59,7 @@ body {
   width: 16%;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover, #searchCard:hover {
   background-color: #3e3d3d !important;
 }
 
@@ -536,3 +536,51 @@ background: linear-gradient(180deg, #9F1C42,#7A1935);
   cursor: pointer;
 }
 
+.asideFont, .fontSmallArtist {
+  font-size: 0.8em !important;
+  line-height: 1.3 !important;
+}
+
+.pointerAlbum, .fontArtisti {
+  font-size: 0.7em !important;
+  line-height: 1.3 !important;
+}
+
+@media screen and (max-width:1200px) {
+  .btn-outline-light {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .fontArtisti {
+    font-size: 0.6em !important;
+  }
+
+  .fontSmallArtist {
+    font-size: 0.7em !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fontSmallArtist {
+    font-size: 1.2em !important;
+    line-height: 1.3 !important;
+  }
+
+  .fontArtisti {
+    font-size: 0.9em !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .asideFont {
+    font-size: 1.2em !important;
+    line-height: 1.3 !important;
+  }
+  
+  .pointerAlbum {
+    font-size: 0.9em !important;
+    line-height: 1.3 !important;
+  }
+}
