@@ -59,7 +59,7 @@ body {
   width: 16%;
 }
 
-.dropdown-item:hover, .lineaColorata:hover {
+.dropdown-item:hover {
   background-color: #3e3d3d !important;
 }
 
@@ -78,7 +78,6 @@ body {
   padding: 3.7px;
 }
 
-
 @media screen and (max-width: 992px) {
   aside ul li svg {
     width: 30px;
@@ -93,13 +92,12 @@ body {
   }
 }
 
- @media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
   aside ul li svg {
     width: 40px !important;
     height: 40px !important;
   }
-} 
-
+}
 
 .backgroundMain {
   background-color: #121212;
@@ -110,7 +108,7 @@ body {
 }
 
 .gradientHero {
-  background: rgb(0, 0, 0);
+  background: #121212;
   background: linear-gradient(
     25deg,
     rgba(0, 0, 0, 1) 0%,
@@ -120,12 +118,17 @@ body {
 }
 
 .gradientViolet {
-    background-color: #121212;
-    background: rgb(120,96,232);
-background: linear-gradient(180deg, rgba(120,96,232,0.5019257703081232) 0%, rgba(120,96,232,0.48792016806722693) 19%, rgba(18,18,18,0) 100%);
+  background-color: #121212;
+  background: rgb(120, 96, 232);
+  background: linear-gradient(
+    180deg,
+    rgba(120, 96, 232, 0.5019257703081232) 0%,
+    rgba(120, 96, 232, 0.48792016806722693) 10%, 
+    rgba(18, 18, 18) 40%
+  );
 }
 
-.fontPlaylists{
+.fontPlaylists {
   font-size: 0.9em !important;
 }
 
@@ -153,14 +156,20 @@ background: linear-gradient(180deg, rgba(120,96,232,0.5019257703081232) 0%, rgba
 }
 
 #btnGreenPlay {
-      height: 55px;
-      display: none;
-      background-color: #1db954;
-      color: white;
-      font-size: 24px;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
+  height: 55px;
+  display: none;
+  background-color: #1db954;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+@media screen and (max-width: 992px) {
+  #btnGreenPlay {
+    display: none !important;
+  }
 }
 
 #btnGreenPlay:hover {
@@ -168,8 +177,8 @@ background: linear-gradient(180deg, rgba(120,96,232,0.5019257703081232) 0%, rgba
   transform: scale(1.1);
 }
 
-.playlist:hover { 
-  transform: scale(1.05); 
+.playlist:hover {
+  transform: scale(1.05);
 }
 
 @keyframes slideUp {
@@ -224,7 +233,8 @@ footer ul li {
   padding-right: 2px;
 }
 
-#playerBtnBack:hover, #playerBtnForward:hover {
+#playerBtnBack:hover,
+#playerBtnForward:hover {
   color: white !important;
   opacity: 100% !important;
   transform: scaleX(1.1) scaleY(1.1);
@@ -254,7 +264,8 @@ footer ul li {
   border-radius: 50%;
 }
 
-#current-time, #total-time {
+#current-time,
+#total-time {
   font-size: small;
   opacity: 50%;
 }
@@ -267,8 +278,8 @@ footer ul li {
   border-radius: 2px; /* Angoli arrotondati */
   outline: none; /* Rimuove il contorno */
   opacity: 50%;
-
 }
+
 
 #volume-control::-webkit-slider-runnable-track {
   height: 4px; /* Altezza della barra */
@@ -279,48 +290,52 @@ footer ul li {
 #volume-control::-webkit-slider-thumb {
   -webkit-appearance: none; /* Permette di personalizzare il cursore */
   appearance: none;
-  width: 12px; /* Larghezza del cursore */
-  height: 12px; /* Altezza del cursore */
+  width: 10px; /* Larghezza del cursore */
+  height: 10px; /* Altezza del cursore */
   background-color: white; /* Colore del cursore */
   border-radius: 50%; /* Forma circolare */
-  border: 1px solid #999; /* Bordo del cursore */
   cursor: pointer;
   margin-top: -4px; /* Centra il cursore verticalmente */
 }
 
-/* Per Firefox */
-#volume-control::-moz-range-track {
-  height: 4px; /* Altezza della barra */
-  background: #ddd;
-  border-radius: 2px;
-}
+@media screen and (max-width: 576px) {
+  #volume-control {
+   width: 50px !important;
+  }
+  #volume i {
+   font-size: smaller;
+  }
 
-#volume-control::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
-  background-color: white;
-  border: 1px solid #999;
-  border-radius: 50%;
-  cursor: pointer;
-}
+  #volume-control::-webkit-slider-thumb {
+    width: 7px;
+    height: 7px;
+    margin-top: -2px;
+  }
+ }
 
-
-.contenitoreImg {
-  height: 300px;
-}
+ .contenitoreImg {
+  height: 400px;
+} 
 
 .contenitoreImg img {
-  top: -50%;
+  top: -65%;
+}
+
+@media screen and (max-width: 768px) {
+  .contenitoreImg img {
+    top: -35%;
+  }
+  
 }
 
 .btnCiccio:hover {
-  background-color: #3BE476;
+  background-color: #3be476;
   transform: scaleX(1.05) scaleY(1.05);
 }
 
-#btnSegui:hover {
+.btnSegui:hover {
   border-color: white !important;
-  transform: scaleX(1.05) scaleY(1.05);
+  transform: scaleX(1.05) scaleY(1.05) !important;
 }
 
 .logoColorato {
@@ -328,9 +343,11 @@ footer ul li {
   font-size: 1.7em !important;
 }
 
-.linkColorato:hover, .playMusicHover:hover {
+.linkColorato:hover,
+.playMusicHover:hover {
   color: white !important;
   text-decoration: underline !important;
+  cursor: pointer;
 }
 
 .contenitoreImgAlbum {
@@ -339,12 +356,9 @@ footer ul li {
   margin-right: 10px;
 }
 
-.btnPlus:hover {
-  transform: scaleX(1.05) scaleY(1.05);
-}
-
 .bi-plus-circle:hover {
   color: white !important;
+  transform: scaleX(2) scaleY(2) !important;
 }
 
 .elenco:hover {
@@ -352,37 +366,173 @@ footer ul li {
 }
 
 .clock {
-  margin-right: 5.5em !important;
-}
-
-@media screen and (max-width: 576px) {
-  .clock {
-    margin-right: 2.4em !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .clock {
-    margin-right: 2.8em !important;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .clock {
-    margin-right: 3.6em !important;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .clock {
-    margin-right: 4.3em !important;
-  }
+  margin-right: 4em !important;
 }
 
 .playerImg {
   width: 80px !important;
 }
 
-#lineaColorata:hover {
-  color: white !important;
+.lineaColorata {
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
 }
+
+.lineaColorata:hover {
+  background-color: #333;
+}
+
+.lineaGialla:hover{
+  border-radius: 7px;
+  background-color: #fae4a4b4;
+}
+
+ol li::marker {
+  content: "" counter(list-item) "";
+  font-weight: 200;
+  font-size: 110%;
+  color: #ffffff8f;
+}
+
+.bi-heart-fill {
+  color: #1ed760;
+}
+
+#row2, #row, #rowArtisti, #rowArtisti2 {
+  overflow: auto;
+}
+
+#row2::-webkit-scrollbar, #row::-webkit-scrollbar, #rowArtisti::-webkit-scrollbar, #rowArtisti2::-webkit-scrollbar {
+height: 8px;
+}
+#row2::-webkit-scrollbar-track, #row::-webkit-scrollbar-track, #rowArtisti::-webkit-scrollbar-track, #rowArtisti2::-webkit-scrollbar-track {
+  background-color: transparent;
+  width: 10px;
+}
+#row2::-webkit-scrollbar-thumb, #row::-webkit-scrollbar-thumb, #rowArtisti::-webkit-scrollbar-thumb, #rowArtisti2::-webkit-scrollbar-thumb {
+  background-repeat: no-repeat, no-repeat;
+  background-color: #898989;
+  border-radius: 50px;
+}
+
+#row2::-webkit-scrollbar-thumb:hover, #row::-webkit-scrollbar-thumb:hover, #rowArtisti::-webkit-scrollbar-thumb:hover, #rowArtisti2::-webkit-scrollbar-thumb:hover {
+  background-repeat: no-repeat, no-repeat;
+  background-color: white;
+  border-radius: 50px;
+}
+
+#nomeArtista, .shadowText {
+  text-shadow: 2px 2px 4px black;
+  
+}
+
+.imgShadow{
+  box-shadow: 3px 7px 15px 0px black;
+}
+
+.backgroundArtist{
+  background: rgb(255,229,156);
+  background: linear-gradient(180deg, rgba(255,229,156,1) 10%, rgba(255,223,124,1) 20%, rgba(255,218,111,1) 31%, rgba(18, 18, 18) 70%);
+}
+
+
+#ascoltatoriMensili, #verificato {
+  text-shadow: 1px 1px 2px black !important;
+}
+
+#ol {
+  overflow: hidden;
+  max-height: 520px;  
+  transition: max-height 0.5s ease; 
+}
+
+.stickyAside, .stickyAlbum {
+  position: sticky !important;
+  top: 75px !important;
+}
+
+.stickyGiallo{
+  background: #FFDB71;
+  background: linear-gradient(180deg, #FFDB71  ,#E8C766);
+}
+
+.mainMagenta{
+  background: rgb(207,32,82);
+background: linear-gradient(180deg, rgba(207,32,82) 0%, rgba(18,18,18) 50%);
+}
+
+.stickyMagenta{
+  background: rgb(207,32,82);
+background: linear-gradient(180deg, #9F1C42,#7A1935);
+}
+
+.lineaMagenta:hover {
+  background-color: rgba(246, 50, 106, 0.824);
+  border-radius: 8px;
+}
+
+.titoloScroll {
+  font-size: xx-large;
+  text-align: start;
+}
+
+@media screen and (max-width: 1200px) {
+  .titoloScroll {
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .titoloScroll {
+    font-size: larger;
+  }
+.stickyAlbum {
+  top: 67px !important;
+}
+  
+}
+
+@media screen and (max-width: 768px) {
+  .titoloScroll {
+    font-size: large;
+  }
+  .stickyAlbum {
+    top: 75px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .titoloScroll {
+    font-size: medium;
+  }
+  .stickyAside {
+    position: sticky !important;
+    top: 20px !important;
+  }
+  
+}
+
+.titoloScroll {
+  opacity: 0.5; /* Inizialmente invisibile */
+  transition: opacity 0.5s ease-in-out; /* Transizione fluida */
+}
+
+.text-transition .titoloScroll {
+  opacity: 1; /* Mostra il testo con transizione */
+}
+
+#search-results {
+  overflow: auto;
+  max-height: 50vh !important;
+}
+
+#search-results::-webkit-scrollbar {
+  display: none;
+}
+
+#searchAlbum, #searchArtist, #pointerAlbum, .cursorPointer {
+  cursor: pointer;
+}
+
