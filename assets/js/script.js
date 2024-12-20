@@ -11,6 +11,8 @@ let audio = new Audio();
 const progressBar = document.getElementById("progress-bar");
 const currentTimeLabel = document.getElementById("current-time");
 const totalTimeLabel = document.getElementById("total-time");
+const rowArtisti = document.getElementById('rowArtisti');
+const rowArtisti2 = document.getElementById('rowArtisti2');
 
 const btnForward = document.getElementById('btnForward');
 const btnBack = document.getElementById('btnBack');
@@ -18,7 +20,6 @@ const playerBtnForward = document.getElementById('playerBtnForward');
 const playerBtnBack = document.getElementById('playerBtnBack');
 const playerImg = document.getElementById('playerImg');
 const listaRicerca = document.getElementById('listaRicerca');
-const navForm = document.getElementById('navForm');
 lista = [];
 
 
@@ -156,9 +157,9 @@ progressBar.addEventListener("input", () => {
 });
 
 
-let id = [75621062, 1346746, 352412657, 15103893, 6157080, 286549802];
+let id = [6047452, 75621062, 352412657, 15103893, 6157080, 286549802, 522318972, 1346746, 119606, 49736572, 547520122, 1262014, 68346981, 6155526];
 let idRandom = id[Math.floor(Math.random() * id.length)];
-let album;
+
 url2 = `https://striveschool-api.herokuapp.com/api/deezer/album/${idRandom}`;
 
 
@@ -177,14 +178,14 @@ async function getSongs() {
         for (let i=0; i<albums.length; i++) {
             const row = document.getElementById('row');
 
-            let colAlbum = `<div class="card bg-transparent border-0" style="width: 18rem;">
+            let colAlbum = `<div class="col-3 col-md-5 col-lg-3 card bg-transparent border-0 px-0 pe-3">
                             <div class="position-relative" id="playlist">
-                                <img  width="80%" class="rounded-2 card-img-top" src="${albums[i].cover_big}" id="albumCover"/>
+                                <img  width="80%" class="rounded-2 card-img-top cursorPointer" src="${albums[i].cover_big}" id="albumCover"/>
                                 <button type="button" class="btn rounded-circle greenSpotify border-0 position-absolute bottom-0 end-0 m-2" id="btnGreenPlay"><i class="bi bi-play-fill fs-3 ps-1 text-black"></i></button>
                             </div>    
-                                <div class="card-body">
+                                <div class="card-body col-12 px-0">
                                     <p class="mx-2 mb-0 fs-6 text-white" id="titoloAlbum">${albums[i].title}</p>
-                                    <p class="mx-2 my-0 text-white-50 playMusicHover" id="artistaAlbum">${albums[i].artist.name}</p>  
+                                    <p class="mx-2 my-0 text-white-50 playMusicHover cursorPointer" id="artistaAlbum">${albums[i].artist.name}</p>  
                                 </div>
                             </div>`
             row.innerHTML += colAlbum;
@@ -217,25 +218,123 @@ async function getSongs() {
 
 getSongs();
 
+// TODO: STAMPA ARTISTI
 
-// btnCerca.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     lista.push(navInput.value);
-//     visualSearch();
-// })
-
-// function visualSearch() {
-//     listaRicerca.innerHTML = "";
-//     for (let i = 0; i < lista.length; i++) {
-//       let listItem = document.createElement("li");
-//       listItem.innerHTML = `<i class="bi bi-search"></i> ${lista[i]}`;
-//       listaRicerca.appendChild(listItem);
-//       navForm.reset();
-//     }
-//   }
+let idArtisti = [259, 6168800, 892, 1155242, 3315, 75491, 2851, 542, 1176900, 13612387, 2959, 10190528, 12944623, 5648];
+ let idArtistiRandom = idArtisti[Math.floor(Math.random() * idArtisti.length)];
+ let artisti;
+const baseUrlArtisti = `https://striveschool-api.herokuapp.com/api/deezer/artist/`;
 
 
+async function getArtisti() {
+    try {
+        let fetchPromises = idArtisti.map(async (id) => {
+            let response = await fetch(`${baseUrlArtisti}${id}`); // URL specifico per ciascun artista
+            if (!response.ok) throw new Error(`Errore nel recupero dei dati per ID: ${id}`);
+            return response.json();
+        });
+        let artisti = await Promise.all(fetchPromises);
 
+        console.log('RISPOSTE PER TUTTI GLI ARTISTI:', artisti);
+
+        for (let i=0; i<artisti.length; i++) {
+
+            let colArtisti = `<div class="col-3 col-md-5 col-lg-3 card bg-transparent border-0 px-0 pe-3">
+                            <div class="position-relative bg-transparent" id="playlist">
+                                <img  width="80%" class="rounded-circle card-img-top cursorPointer" src="${artisti[i].picture_big}" id="artistCover"/>
+                            </div>    
+                                <div class="card-body col-12 px-0 text-center">
+                                    <p class="mx-2 my-0 text-white-50 playMusicHover cursorPointer" id="artistAlbum">${artisti[i].name}</p>  
+                                </div>
+                            </div>`
+            rowArtisti.innerHTML += colArtisti;
+
+    const artistCover = document.querySelectorAll('#artistCover');
+    for (let i = 0; i < artistCover.length; i++) {
+        artistCover[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstUrl = 'artist.html';
+            let newUrl = `${firstUrl}?_id=${artisti[i].id}`;
+            window.location.href = newUrl;
+        })
+    }
+
+    const artistAlbum = document.querySelectorAll('#artistAlbum');
+    for (let i = 0; i < artistAlbum.length; i++) {
+        artistAlbum[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstUrl = 'artist.html';
+            let newUrl = `${firstUrl}?_id=${artisti[i].id}`;
+            window.location.href = newUrl;
+        })
+    }
+ };
+    } catch (error) {
+        console.log('Errore durante il recupero degli album:', error);
+    }
+}
+
+getArtisti();
+
+
+
+
+
+let idArtisti2 = [4138, 108153772, 3, 66, 12436, 9635624, 1147,  196, 1562681, 98, 52115362, 390032, 74398, 927];
+ let idArtistiRandom2 = idArtisti2[Math.floor(Math.random() * idArtisti2.length)];
+ let artisti2;
+const baseUrlArtisti2 = `https://striveschool-api.herokuapp.com/api/deezer/artist/`;
+
+
+async function getArtisti2() {
+    try {
+        let fetchPromises = idArtisti2.map(async (id) => {
+            let response = await fetch(`${baseUrlArtisti2}${id}`); // URL specifico per ciascun artista
+            if (!response.ok) throw new Error(`Errore nel recupero dei dati per ID: ${id}`);
+            return response.json();
+        });
+        let artisti2 = await Promise.all(fetchPromises);
+
+        console.log('RISPOSTE PER TUTTI GLI ARTISTI:', artisti2);
+
+        for (let i=0; i<artisti2.length; i++) {
+
+            let colArtisti = `<div class="col-3 col-md-5 col-lg-3 card bg-transparent border-0 px-0 pe-3">
+                            <div class="position-relative bg-transparent" id="playlist">
+                                <img  width="80%" class="rounded-circle card-img-top cursorPointer" src="${artisti2[i].picture_big}" id="artistCover2"/>
+                            </div>    
+                                <div class="card-body col-12 px-0 text-center">
+                                    <p class="mx-2 my-0 text-white-50 playMusicHover cursorPointer" id="artistAlbum2">${artisti2[i].name}</p>  
+                                </div>
+                            </div>`
+            rowArtisti2.innerHTML += colArtisti;
+
+    const artistCover2 = document.querySelectorAll('#artistCover2');
+    for (let i = 0; i < artistCover2.length; i++) {
+        artistCover2[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstUrl = 'artist.html';
+            let newUrl = `${firstUrl}?_id=${artisti2[i].id}`;
+            window.location.href = newUrl;
+        })
+    }
+
+    const artistAlbum2 = document.querySelectorAll('#artistAlbum2');
+    for (let i = 0; i < artistAlbum2.length; i++) {
+        artistAlbum2[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstUrl = 'artist.html';
+            let newUrl = `${firstUrl}?_id=${artisti2[i].id}`;
+            window.location.href = newUrl;
+        })
+    }
+ };
+    } catch (error) {
+        console.log('Errore durante il recupero degli album:', error);
+    }
+}
+
+getArtisti2();
 
 
 // il search iniza da qui
@@ -243,6 +342,7 @@ getSongs();
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const searchResultsContainer = document.getElementById("search-results");
+const navForm = document.getElementById('navForm');
 
 async function searchSongs(query) {
     const searchUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(query)}`;
@@ -252,6 +352,8 @@ async function searchSongs(query) {
       if (!response.ok) throw new Error("Errore nella ricerca");
       
       const data = await response.json();
+      console.log('CANZONIIIII',data);
+      
       displaySearchResults(data.data);
     } catch (error) {
       console.error("Errore nella ricerca:", error);
@@ -262,30 +364,58 @@ async function searchSongs(query) {
   function displaySearchResults(songs) {
     searchResultsContainer.innerHTML = "";
     
-    songs.forEach((song) => {
+    for (let i=0; i<songs.length; i++) {
       const songElement = document.createElement("div");
       songElement.className = "d-flex align-items-center my-2";
   
       songElement.innerHTML = `
-        <img src="${song.album.cover_small}" alt="Album Cover" class="me-3" style="width: 50px; height: 50px;" />
+        <img src="${songs[i].album.cover_small}" alt="Album Cover" class="me-3" id="searchAlbum" style="width: 50px; height: 50px;" />
         <div class="flex-grow-1">
-          <p class="mb-0"><strong>${song.title}</strong> - ${song.artist.name}</p>
-          <small>${song.album.title}</small>
+          <p class="mb-0"><strong id="searchTitle">${songs[i].title}</strong> - <span id="searchArtist">${songs[i].artist.name}</span></p>
+          <small id="pointerAlbum">${songs[i].album.title}</small>
         </div>
-        <button class="btn btn-outline-primary btn-sm play-song-btn" data-preview="${song.preview}" data-title="${song.title}" data-artist="${song.artist.name}">
+        <button class="btn btn-outline-primary btn-sm play-song-btn" data-preview="${songs[i].preview}" data-title="${songs[i].title}" data-artist="${songs[i].artist.name}">
           <i class="fas fa-play"></i>
         </button>
       `;
-  
       searchResultsContainer.appendChild(songElement);
-    });
+
+      const searchAlbum = document.querySelectorAll('#searchAlbum');
+      const searchArtist = document.querySelectorAll('#searchArtist');
+      const pointerAlbum = document.querySelectorAll('#pointerAlbum');
+
+    for (let i=0; i<searchAlbum.length; i++) {
+        searchAlbum[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstUrl = 'album.html';
+            let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
+            window.location.href = newUrl;
+        })
+    }
+    for (let i=0; i<searchArtist.length; i++) {
+        searchArtist[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstUrl = 'artist.html';
+            let newUrl = `${firstUrl}?_id=${songs[i].artist.id}`;
+            window.location.href = newUrl;
+        })
+    }
+    for (let i=0; i<pointerAlbum.length; i++) {
+        pointerAlbum[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstUrl = 'album.html';
+            let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
+            window.location.href = newUrl;
+        })
+    }
+
+    };
   
     document.querySelectorAll(".play-song-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         const preview = btn.getAttribute("data-preview");
         const title = btn.getAttribute("data-title");
         const artist = btn.getAttribute("data-artist");
-  
   
         playSongFromSearch(preview, title, artist);
       });
@@ -309,6 +439,7 @@ async function searchSongs(query) {
     if (query) {
       searchSongs(query);
     }
+    navForm.reset();
   });
   
   searchInput.addEventListener("keypress", (e) => {

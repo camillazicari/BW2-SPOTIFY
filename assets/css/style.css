@@ -166,6 +166,12 @@ body {
   transition: background-color 0.3s, transform 0.3s;
 }
 
+@media screen and (max-width: 992px) {
+  #btnGreenPlay {
+    display: none !important;
+  }
+}
+
 #btnGreenPlay:hover {
   background-color: #1ed760;
   transform: scale(1.1);
@@ -394,24 +400,24 @@ ol li::marker {
   color: #1ed760;
 }
 
-#row2 {
+#row2, #row, #rowArtisti, #rowArtisti2 {
   overflow: auto;
 }
 
-#row2::-webkit-scrollbar {
+#row2::-webkit-scrollbar, #row::-webkit-scrollbar, #rowArtisti::-webkit-scrollbar, #rowArtisti2::-webkit-scrollbar {
 height: 8px;
 }
-#row2::-webkit-scrollbar-track {
+#row2::-webkit-scrollbar-track, #row::-webkit-scrollbar-track, #rowArtisti::-webkit-scrollbar-track, #rowArtisti2::-webkit-scrollbar-track {
   background-color: transparent;
   width: 10px;
 }
-#row2::-webkit-scrollbar-thumb {
+#row2::-webkit-scrollbar-thumb, #row::-webkit-scrollbar-thumb, #rowArtisti::-webkit-scrollbar-thumb, #rowArtisti2::-webkit-scrollbar-thumb {
   background-repeat: no-repeat, no-repeat;
   background-color: #898989;
   border-radius: 50px;
 }
 
-#row2::-webkit-scrollbar-thumb:hover {
+#row2::-webkit-scrollbar-thumb:hover, #row::-webkit-scrollbar-thumb:hover, #rowArtisti::-webkit-scrollbar-thumb:hover, #rowArtisti2::-webkit-scrollbar-thumb:hover {
   background-repeat: no-repeat, no-repeat;
   background-color: white;
   border-radius: 50px;
@@ -525,3 +531,8 @@ background: linear-gradient(180deg, #9F1C42,#7A1935);
 #search-results::-webkit-scrollbar {
   display: none;
 }
+
+#searchAlbum, #searchArtist, #pointerAlbum, .cursorPointer {
+  cursor: pointer;
+}
+

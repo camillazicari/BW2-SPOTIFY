@@ -61,14 +61,14 @@
                   </a>
                 </li>
                 <li class="nav-item align-self-center">
-                  <form class="d-flex bg-dark rounded-5 search" role="search">
+                  <form class="d-flex bg-dark rounded-5 search" role="search" id="navForm">
                     <button
                       class="btn"
                       type="button"
                       data-bs-toggle="tooltip"
                       data-bs-placement="bottom"
                       data-bs-title="Cerca"
-                      id="btnCerca"
+                      id="search-button"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -93,6 +93,7 @@
                       type="search"
                       placeholder="Cosa vuoi ascoltare?"
                       aria-label="Search"
+                      id="search-input"
                     />
                     <button
                       class="btn search d-flex align-items-center justify-content-end"
@@ -297,9 +298,12 @@
               </ul>
             </div>
             <div>
-              <ul id="listaRicerca">
-                <!-- STAMPA RICERCA -->
-              </ul>
+
+              <!-- STAMPA RICERCA -->
+              <h4 class="text-white-50 py-2">Risultati di ricerca:</h4>
+              <div id="search-results" class="container my-2 text-white p-0">
+
+              </div>
             </div>
           </aside>
         </div>
