@@ -48,7 +48,7 @@ function printSongs() {
                             </div>
                           </div>
                             <div class="col-3 text-end align-self-center me-3">
-                                <button type="button" class="border-0 bg-transparent text-secondary p-0 fs-5" id="btnHeart"><i class="bi bi-heart"></i></button>
+                                <button type="button" class="border-0 bg-transparent text-white opacity-75 p-0 fs-5" id="btnHeart"><i class="bi bi-heart"></i></button>
                             </div>
                         </div>
                     </li>`
