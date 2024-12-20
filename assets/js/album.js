@@ -303,6 +303,8 @@ function printTracks() {
 getAlbum();
 
 
+// il search inizia da qui
+
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const searchResultsContainer = document.getElementById("search-results");
@@ -310,86 +312,128 @@ const navForm = document.getElementById('navForm');
 
 async function searchSongs(query) {
     const searchUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(query)}`;
-    
+
     try {
-      const response = await fetch(searchUrl);
-      if (!response.ok) throw new Error("Errore nella ricerca");
-      
-      const data = await response.json();
-      console.log('CANZONIIIII',data);
-      
-      displaySearchResults(data.data);
+        const response = await fetch(searchUrl);
+        if (!response.ok) throw new Error("Errore nella ricerca");
+
+        const data = await response.json();
+        console.log('CANZONIIIII', data);
+
+        displaySearchResults(data.data);
+
+        displaySearchResults(data.data);
     } catch (error) {
-      console.error("Errore nella ricerca:", error);
+        console.error("Errore nella ricerca:", error);
     }
-  }
-  
-  
-  function displaySearchResults(songs) {
-    searchResultsContainer.innerHTML = "";
-    
-    for (let i=0; i<songs.length; i++) {
-      const songElement = document.createElement("div");
-      songElement.className = "d-flex align-items-center my-2";
-  
-      songElement.innerHTML = `
-        <img src="${songs[i].album.cover_small}" alt="Album Cover" class="me-3" id="searchAlbum" style="width: 50px; height: 50px;" />
-        <div class="flex-grow-1">
-          <p class="mb-0"><strong id="searchTitle">${songs[i].title}</strong> - <span id="searchArtist">${songs[i].artist.name}</span></p>
-          <small id="pointerAlbum">${songs[i].album.title}</small>
+}
+
+
+function displaySearchResults(songs) {
+
+    if (songs.length > 0) {
+
+        searchResultsContainer.innerHTML = "";
+
+        for (let i = 0; i < songs.length; i++) {
+            const songElement = document.createElement("div");
+
+            songElement.innerHTML = `
+<div class="card mb-3 bg-transparent text-white border-0" id="searchCard">
+      <div class="row g-0 align-items-center">
+        <div class="col-3">
+          <img
+            src="${songs[i].album.cover_big}"
+            alt="Album Cover"
+            class="me-3 rounded-2 w-100"
+            id="searchAlbum"
+          />
         </div>
-        <button class="btn btn-outline-primary btn-sm play-song-btn" data-preview="${songs[i].preview}" data-title="${songs[i].title}" data-artist="${songs[i].artist.name}">
-          <i class="fas fa-play"></i>
-        </button>
-      `;
-      searchResultsContainer.appendChild(songElement);
+        <div class="col-9">
+          <div class="card-body py-0">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-9 align-self-center">
+                <p class="mb-1 fontSmallArtist">
+                  <strong id="searchTitle">${songs[i].title}</strong> <br/>
+                  <span class="fst-italic" id="searchArtist">${songs[i].artist.name}</span>
+                </p>
+                <p class="m-0 fontArtisti" id="pointerAlbum">${songs[i].album.title}</p>
+              </div>
+              <div class="col-2 p-0">
+                <button
+                  class="btn rounded-circle btn-outline-light btn-sm play-song-btn"
+                  style="width: 40px; height:40px"
+                  data-image="${songs[i].album.cover_big}"
+                  data-preview="${songs[i].preview}"
+                  data-title="${songs[i].title}"
+                  data-artist="${songs[i].artist.name}"
+                >
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      const searchAlbum = document.querySelectorAll('#searchAlbum');
-      const searchArtist = document.querySelectorAll('#searchArtist');
-      const pointerAlbum = document.querySelectorAll('#pointerAlbum');
+        `;
+            searchResultsContainer.appendChild(songElement);
 
-    for (let i=0; i<searchAlbum.length; i++) {
-        searchAlbum[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            let firstUrl = 'album.html';
-            let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
-            window.location.href = newUrl;
-        })
+            const searchAlbum = document.querySelectorAll('#searchAlbum');
+            const searchArtist = document.querySelectorAll('#searchArtist');
+            const pointerAlbum = document.querySelectorAll('#pointerAlbum');
+
+            for (let i = 0; i < searchAlbum.length; i++) {
+                searchAlbum[i].addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let firstUrl = 'album.html';
+                    let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
+                    window.location.href = newUrl;
+                })
+            }
+            for (let i = 0; i < searchArtist.length; i++) {
+                searchArtist[i].addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let firstUrl = 'artist.html';
+                    let newUrl = `${firstUrl}?_id=${songs[i].artist.id}`;
+                    window.location.href = newUrl;
+                })
+            }
+            for (let i = 0; i < pointerAlbum.length; i++) {
+                pointerAlbum[i].addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let firstUrl = 'album.html';
+                    let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
+                    window.location.href = newUrl;
+                })
+            }
+
+        };
+    } else {
+
+        searchResultsContainer.innerHTML = `<div class="alert alert-danger d-flex align-items-center"id="alert"  role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <div>&nbsp; La tua ricerca non ha prodotto risultati</div>
+      </div>`
+
     }
-    for (let i=0; i<searchArtist.length; i++) {
-        searchArtist[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            let firstUrl = 'artist.html';
-            let newUrl = `${firstUrl}?_id=${songs[i].artist.id}`;
-            window.location.href = newUrl;
-        })
-    }
 
-    for (let i=0; i<pointerAlbum.length; i++) {
-        pointerAlbum[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            let firstUrl = 'album.html';
-            let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
-            window.location.href = newUrl;
-        })
-    }
-
-
-    };
-  
     document.querySelectorAll(".play-song-btn").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const preview = btn.getAttribute("data-preview");
-        const title = btn.getAttribute("data-title");
-        const artist = btn.getAttribute("data-artist");
-  
-        playSongFromSearch(preview, title, artist);
-      });
+        btn.addEventListener("click", (e) => {
+            const image = btn.getAttribute("data-image");
+            const preview = btn.getAttribute("data-preview");
+            const title = btn.getAttribute("data-title");
+            const artist = btn.getAttribute("data-artist");
+
+            playSongFromSearch(image, preview, title, artist);
+        });
     });
-  }
-  
-  
-  function playSongFromSearch(preview, title, artist) {
+}
+
+
+function playSongFromSearch(image, preview, title, artist) {
+    playerImg.src = image;
     document.getElementById("song-title").innerText = title;
     document.getElementById("artist-name").innerText = artist;
     audio.src = preview;
@@ -397,24 +441,14 @@ async function searchSongs(query) {
     const playButton = document.querySelector(".btn-play i");
     playButton.classList.remove("fa-play");
     playButton.classList.add("fa-pause");
-  }
-  
-  
-  searchButton.addEventListener("click", () => {
+}
+
+
+searchButton.addEventListener("click", () => {
     const query = searchInput.value.trim();
     if (query) {
-      searchSongs(query);
+        searchSongs(query);
     }
     navForm.reset();
-  });
-  
-  searchInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      const query = searchInput.value.trim();
-      if (query) {
-  
-        searchSongs(query);
-      }
-    }
-  });
- 
+});
+
