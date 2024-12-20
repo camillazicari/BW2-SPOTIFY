@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-
+//la ricerca ( search ) inizia da qua
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const searchResultsContainer = document.getElementById("search-results");
@@ -242,7 +242,9 @@ async function searchSongs(query) {
       
       const data = await response.json();
       console.log('CANZONIIIII',data);
-      
+    
+      displaySearchResults(data.data);
+
       displaySearchResults(data.data);
     } catch (error) {
       console.error("Errore nella ricerca:", error);
@@ -251,56 +253,65 @@ async function searchSongs(query) {
   
   
   function displaySearchResults(songs) {
-    searchResultsContainer.innerHTML = "";
+
+    if (songs.length > 0) {
+
+      searchResultsContainer.innerHTML = "";
     
-    for (let i=0; i<songs.length; i++) {
-      const songElement = document.createElement("div");
-      songElement.className = "d-flex align-items-center my-2";
+      for (let i=0; i<songs.length; i++) {
+        const songElement = document.createElement("div");
+        songElement.className = "d-flex align-items-center my-2";
+    
+        songElement.innerHTML = `
+          <img src="${songs[i].album.cover_small}" alt="Album Cover" class="me-3" id="searchAlbum" style="width: 50px; height: 50px;" />
+          <div class="flex-grow-1">
+            <p class="mb-0"><strong id="searchTitle">${songs[i].title}</strong> - <span id="searchArtist">${songs[i].artist.name}</span></p>
+            <small id="pointerAlbum">${songs[i].album.title}</small>
+          </div>
+          <button class="btn btn-outline-primary btn-sm play-song-btn" data-preview="${songs[i].preview}" data-title="${songs[i].title}" data-artist="${songs[i].artist.name}">
+            <i class="fas fa-play"></i>
+          </button>
+        `;
+        searchResultsContainer.appendChild(songElement);
   
-      songElement.innerHTML = `
-        <img src="${songs[i].album.cover_small}" alt="Album Cover" class="me-3" id="searchAlbum" style="width: 50px; height: 50px;" />
-        <div class="flex-grow-1">
-          <p class="mb-0"><strong id="searchTitle">${songs[i].title}</strong> - <span id="searchArtist">${songs[i].artist.name}</span></p>
-          <small id="pointerAlbum">${songs[i].album.title}</small>
-        </div>
-        <button class="btn btn-outline-primary btn-sm play-song-btn" data-preview="${songs[i].preview}" data-title="${songs[i].title}" data-artist="${songs[i].artist.name}">
-          <i class="fas fa-play"></i>
-        </button>
-      `;
-      searchResultsContainer.appendChild(songElement);
+        const searchAlbum = document.querySelectorAll('#searchAlbum');
+        const searchArtist = document.querySelectorAll('#searchArtist');
+        const pointerAlbum = document.querySelectorAll('#pointerAlbum');
+  
+      for (let i=0; i<searchAlbum.length; i++) {
+          searchAlbum[i].addEventListener('click', (e) => {
+              e.preventDefault();
+              let firstUrl = 'album.html';
+              let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
+              window.location.href = newUrl;
+          })
+      }
+      for (let i=0; i<searchArtist.length; i++) {
+          searchArtist[i].addEventListener('click', (e) => {
+              e.preventDefault();
+              let firstUrl = 'artist.html';
+              let newUrl = `${firstUrl}?_id=${songs[i].artist.id}`;
+              window.location.href = newUrl;
+          })
+      }
+      for (let i=0; i<pointerAlbum.length; i++) {
+          pointerAlbum[i].addEventListener('click', (e) => {
+              e.preventDefault();
+              let firstUrl = 'album.html';
+              let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
+              window.location.href = newUrl;
+          })
+      }
+  
+      };
+    } else {
 
-      const searchAlbum = document.querySelectorAll('#searchAlbum');
-      const searchArtist = document.querySelectorAll('#searchArtist');
-      const pointerAlbum = document.querySelectorAll('#pointerAlbum')
+        searchResultsContainer.innerHTML=  `<div class="alert alert-danger d-flex align-items-center"id="alert"  role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <div>&nbsp; An example danger alert with an icon</div>
+      </div>`
 
-    for (let i=0; i<searchAlbum.length; i++) {
-        searchAlbum[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            let firstUrl = 'album.html';
-            let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
-            window.location.href = newUrl;
-        })
-    }
-    for (let i=0; i<searchArtist.length; i++) {
-        searchArtist[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            let firstUrl = 'artist.html';
-            let newUrl = `${firstUrl}?_id=${songs[i].artist.id}`;
-            window.location.href = newUrl;
-        })
-    }
-
-    for (let i=0; i<pointerAlbum.length; i++) {
-        pointerAlbum[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            let firstUrl = 'album.html';
-            let newUrl = `${firstUrl}?_id=${songs[i].album.id}`;
-            window.location.href = newUrl;
-        })
-    }
-
-
-    };
+}
   
     document.querySelectorAll(".play-song-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -311,7 +322,7 @@ async function searchSongs(query) {
         playSongFromSearch(preview, title, artist);
       });
     });
-  }
+   }
   
   
   function playSongFromSearch(preview, title, artist) {
@@ -331,15 +342,5 @@ async function searchSongs(query) {
       searchSongs(query);
     }
     navForm.reset();
-  });
-  
-  searchInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      const query = searchInput.value.trim();
-      if (query) {
-  
-        searchSongs(query);
-      }
-    }
   });
  

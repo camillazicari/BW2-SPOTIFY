@@ -1,737 +1,462 @@
 <!DOCTYPE html>
 <html lang="It">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spotify</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/circular-font.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <header class="position-sticky top-0 z-2">
-      <nav class="navbar navbar-expand bg-black" data-bs-theme="dark">
-        <div class="container-fluid justify-content-xxl-between">
-          <div class="row w-100 m-0 justify-content-between">
-            <div class="col-1 col-xxl-3">
-              <a class="navbar-brand" href="index.html"
-                ><i class="bi bi-spotify text-white fs-1"></i
-              ></a>
-            </div>
-            <div class="d-flex col-7 col-xxl-5">
-              <ul class="navbar-nav w-100">
-                <li
-                  class="nav-item align-self-center bg-dark p-1 rounded-circle me-2"
-                >
-                  <a
-                    class="nav-link text-secondary"
-                    aria-current="page"
-                    href="index.html"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    data-bs-title="Home"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      viewBox="0 0 24 24"
-                      class="Svg-sc-ytk21e-0 bneLcE"
-                      style="fill: #b3b3b3; width: 30px"
-                    >
-                      <path
-                        xmlns="http://www.w3.org/2000/svg"
-                        d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li class="nav-item align-self-center">
-                  <form
-                    class="d-flex bg-dark rounded-5 search"
-                    role="search"
-                    id="navForm"
-                  >
-                    <button
-                      class="btn"
-                      type="button"
-                      data-bs-toggle="tooltip" 
-                      data-bs-placement="bottom"
-                      data-bs-title="Cerca"
-                      id="search-button"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        data-encore-id="icon"
-                        role="img"
-                        aria-hidden="true"
-                        viewBox="0 0 24 24"
-                        class="Svg-sc-ytk21e-0"
-                        style="fill: #b3b3b3; width: 30px"
-                      >
-                        <path
-                          d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z"
-                        />
-                        <path
-                          xmlns="http://www.w3.org/2000/svg"
-                          d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z"
-                        />
-                      </svg>
-                    </button>
 
-                    <input
-                      class="form-control border-0 focus-ring focus-ring-dark border-end border-1 border-secondary rounded-0 my-2 text-white"
-                      id="search-input"
-                      type="search"
-                      placeholder="Cosa vuoi ascoltare?"
-                      aria-label="Search"
-                    />
-                    <button
-                      class="btn search d-flex align-items-center justify-content-end"
-                      type="submit"
-                      data-bs-toggle="tooltip"
-                      data-bs-placement="bottom"
-                      data-bs-title="Naviga"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        data-encore-id="icon"
-                        role="img"
-                        aria-hidden="true"
-                        viewBox="0 0 24 24"
-                        class="Svg-sc-ytk21e-0 bneLcE"
-                        style="fill: #b3b3b3; width: 30px"
-                      >
-                        <path
-                          d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"
-                        />
-                        <path
-                          d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9H3.525zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4V2z"
-                        />
-                        <path
-                          xmlns="http://www.w3.org/2000/svg"
-                          d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"
-                        />
-                        <path
-                          xmlns="http://www.w3.org/2000/svg"
-                          d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9H3.525zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4V2z"
-                        />
-                      </svg>
-                    </button>
-                  </form>
-                </li>
-              </ul>
-            </div>
-            <div class="d-flex col-4 col-xxl-3 justify-content-end p-0">
-              <ul
-                class="navbar-nav justify-content-end justify-content-xl-between"
-              >
-                <li class="nav-item align-self-center d-none d-xl-block">
-                  <a
-                    class="nav-link btn bg-white text-black rounded-5 fw-bold nav-text px-3 py-2"
-                    href="#"
-                    >Esplora Premium</a
-                  >
-                </li>
-                <li
-                  class="nav-item align-self-center nav-text d-none d-lg-block"
-                >
-                  <a class="nav-link text-white" aria-disabled="true"
-                    ><i class="bi bi-arrow-down-circle pe-1"></i>Installa app</a
-                  >
-                </li>
-                <li class="nav-item align-self-center d-none d-lg-block">
-                  <button
-                    type="button"
-                    class="nav-link text-secondary"
-                    aria-disabled="true"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    data-bs-title="Novità"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      viewBox="0 0 16 16"
-                      class="Svg-sc-ytk21e-0 dYnaPI"
-                      style="fill: #b3b3b3; width: 20px"
-                    >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/circular-font.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header class="position-sticky top-0 z-2">
+    <nav class="navbar navbar-expand bg-black" data-bs-theme="dark">
+      <div class="container-fluid justify-content-xxl-between">
+        <div class="row w-100 m-0 justify-content-between">
+          <div class="col-1 col-xxl-3">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-spotify text-white fs-1"></i></a>
+          </div>
+          <div class="d-flex col-7 col-xxl-5">
+            <ul class="navbar-nav w-100">
+              <li class="nav-item align-self-center bg-dark p-1 rounded-circle me-2">
+                <a class="nav-link text-secondary" aria-current="page" href="index.html" data-bs-toggle="tooltip"
+                  data-bs-placement="bottom" data-bs-title="Home">
+                  <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img" aria-hidden="true"
+                    viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE" style="fill: #b3b3b3; width: 30px">
+                    <path xmlns="http://www.w3.org/2000/svg"
+                      d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z" />
+                  </svg>
+                </a>
+              </li>
+              <li class="nav-item align-self-center">
+                <form class="d-flex bg-dark rounded-5 search" role="search" id="navForm">
+                  <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="Cerca" id="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img" aria-hidden="true"
+                      viewBox="0 0 24 24" class="Svg-sc-ytk21e-0" style="fill: #b3b3b3; width: 30px">
                       <path
-                        d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"
-                      />
-                      <path
-                        xmlns="http://www.w3.org/2000/svg"
-                        d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"
-                      />
+                        d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z" />
+                      <path xmlns="http://www.w3.org/2000/svg"
+                        d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z" />
                     </svg>
                   </button>
-                </li>
-                <li class="liGrande rounded-circle d-flex btn-group">
-                  <button
-                    type="button"
-                    class="bg-transparent border-0"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="assets/imgs/avatar vero.jpg"
-                      alt="avatar"
-                      class="w-100 align-self-center rounded-circle avatar"
-                    />
+
+                  <input
+                    class="form-control border-0 focus-ring focus-ring-dark border-end border-1 border-secondary rounded-0 my-2 text-white"
+                    id="search-input" type="search" placeholder="Cosa vuoi ascoltare?" aria-label="Search" />
+                  <button class="btn search d-flex align-items-center justify-content-end" type="submit"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Naviga">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img" aria-hidden="true"
+                      viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE" style="fill: #b3b3b3; width: 30px">
+                      <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" />
+                      <path
+                        d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9H3.525zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4V2z" />
+                      <path xmlns="http://www.w3.org/2000/svg"
+                        d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" />
+                      <path xmlns="http://www.w3.org/2000/svg"
+                        d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9H3.525zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4V2z" />
+                    </svg>
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <button
-                        class="dropdown-item d-flex justify-content-between"
-                        type="button"
-                      >
-                        Account <i class="bi bi-box-arrow-up-right"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button class="dropdown-item" type="button">
-                        Profilo
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        class="dropdown-item d-flex justify-content-between"
-                        type="button"
-                      >
-                        Effettua l'upgrade a premium<i
-                          class="bi bi-box-arrow-up-right ms-3"
-                        ></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button class="dropdown-item" type="button">
-                        Impostazioni
-                      </button>
-                    </li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#">Esci</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
+                </form>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex col-4 col-xxl-3 justify-content-end p-0">
+            <ul class="navbar-nav justify-content-end justify-content-xl-between">
+              <li class="nav-item align-self-center d-none d-xl-block">
+                <a class="nav-link btn bg-white text-black rounded-5 fw-bold nav-text px-3 py-2" href="#">Esplora
+                  Premium</a>
+              </li>
+              <li class="nav-item align-self-center nav-text d-none d-lg-block">
+                <a class="nav-link text-white" aria-disabled="true"><i class="bi bi-arrow-down-circle pe-1"></i>Installa
+                  app</a>
+              </li>
+              <li class="nav-item align-self-center d-none d-lg-block">
+                <button type="button" class="nav-link text-secondary" aria-disabled="true" data-bs-toggle="tooltip"
+                  data-bs-placement="bottom" data-bs-title="Novità">
+                  <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img" aria-hidden="true"
+                    viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" style="fill: #b3b3b3; width: 20px">
+                    <path
+                      d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z" />
+                    <path xmlns="http://www.w3.org/2000/svg"
+                      d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z" />
+                  </svg>
+                </button>
+              </li>
+              <li class="liGrande rounded-circle d-flex btn-group">
+                <button type="button" class="bg-transparent border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="assets/imgs/avatar vero.jpg" alt="avatar"
+                    class="w-100 align-self-center rounded-circle avatar" />
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <button class="dropdown-item d-flex justify-content-between" type="button">
+                      Account <i class="bi bi-box-arrow-up-right"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" type="button">
+                      Profilo
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item d-flex justify-content-between" type="button">
+                      Effettua l'upgrade a premium<i class="bi bi-box-arrow-up-right ms-3"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" type="button">
+                      Impostazioni
+                    </button>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><a class="dropdown-item" href="#">Esci</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
-    </header>
-
-    <div class="container-fluid">
-      <div class="row g-2">
-        <div
-          class="col-md-5 col-lg-4 col-xl-3 p-0 backgroundMain rounded-3 border-end border-5 border-black"
-        >
-          <!--QUI CI VA L'ASIDE-->
-          <aside class="p-3 stickyAside">
-            <div class="border-bottom border-black">
-              <ul class="list-unstyled text-white row">
-                <li class="asideItem mb-2 col-12">
-                  <a class="nav-link" href="javascript:void(0)">
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      width="40px"
-                      height="40px"
-                      aria-hidden="true"
-                      viewBox="0 0 16 16"
-                      class="bg-secondary p-1 me-1"
-                      fill="currentColor"
-                      style="border-radius: 3px"
-                    >
-                      <path
-                        d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z"
-                      ></path>
-                    </svg>
-                    <span>Crea la tua playlist</span>
-                  </a>
-                </li>
-                <li class="asideItem mb-2 col-12">
-                  <a class="nav-link" href="javascript:void(0)">
-                    <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white me-1"
-                      style="border-radius: 3px"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="40px"
-                      height="40px"
-                      fill="white"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z"
-                      />
-                    </svg>
-                    <span>Brani che ti piacciono</span>
-                  </a>
-                </li>
-                <li class="asideItem col-12">
-                  <a class="nav-link" href="javascript:void(0)">
-                    <svg
-                      width="40px"
-                      height="40px"
-                      fill="currentColor"
-                      class="bg-success p-1 me-1"
-                      viewBox="0 0 16 16"
-                      style="border-radius: 3px"
-                    >
-                      <path
-                        d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2"
-                      />
-                    </svg>
-                    <span>I tuoi episodi</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-
-              <!-- STAMPA RICERCA -->
-              <h4 class="text-white-50 py-2">Risultati di ricerca:</h4>
-              <div id="search-results" class="container my-2 text-white p-0">
-
-              </div>
-
-
-          </aside>
-        </div>
-        <!--COMINCIA MAIN-->
-        <main class="col-md-7 col-lg-8 col-xl-9 gradientViolet text-white rounded-3 g-2 ms-0">
-          <div class="m-0 p-0 rounded-1">
-            <div class="m-2">
-              <button
-                class="rounded-circle border-0 bg-transparent text-white mt-4 ms-5"
-                id="btnBack"
-              >
-                <i class="bi bi-chevron-left"></i>
-              </button>
-              <button
-                class="rounded-circle border-0 bg-transparent text-white"
-                id="btnForward"
-              >
-                <i class="bi bi-chevron-right"></i>
-              </button>
-            </div>
-
-            <div
-              class="container-fluid border-bottom border-white-50 pb-5"
-              id="divSongHome"
-            >
-              <div class="row">
-                <div class="col-lg-1">
-                  <!-- VUOTO -->
-                </div>
-                <div class="col-4 col-md-6 col-lg-4 col-xl-3 my-3">
-                  <!--inserire qui la canzone random -->
-                  <img
-                    src="assets/imgs/main/image-12.jpg"
-                    class="rounded-3 imgShadow w-100"
-                    alt="..."
-                    id="coverRandom"
-                  />
-                </div>
-                <div class="col-md-12 col-lg-6 col-lg-6 col-xl-6">
-                  <p class="mt-3 mb-0" id="albumRandom">ALBUM</p>
-                  <p class="display-5" id="titoloRandom">TITOLO CANZONE</p>
-                  <p id="artistaRandom">Nome artista</p>
-                  <button
-                    type="button"
-                    class="greenSpotify fw-bold border-0 rounded-5 px-4 py-2 me-3 mb-2"
-                    id="btnPlayRandom"
-                  >
-                    Play
-                  </button>
-                  <button
-                    type="button"
-                    class="rounded-5 fw-bold bg-transparent border border-white text-white px-4 py-2 me-5 mb-2"
-                  >
-                    Salva
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <section class="container pt-4 mb-5">
-            <!--Qui sezione musica playlist-->
-            <div class="my-3 mx-5">
-              <button
-                type="button"
-                class="rounded-5 bg-white bg-opacity-50 border-0 text-black px-2 py-1"
-              >
-                Tutto
-              </button>
-              <button
-                type="button"
-                class="rounded-5 border-0 bg-secondary bg-opacity-25 text-white px-2 py-1"
-              >
-                Musica
-              </button>
-              <button
-                type="button"
-                class="rounded-5 border-0 t bg-secondary bg-opacity-25 text-white px-2 py-1 me-5"
-              >
-                Podcast
-              </button>
-            </div>
-
-            <div class="row flex-lg-nowrap justify-content-center fw-bold">
-              <div class="col-8 col-lg-5 col-xl-3 p-0 me-4">
-                <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2"
-                >
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-14.jpg"
-                      alt="..."
-                      width="80"
-                      class="rounded-2"
-                    />
-                  </div>
-                  <div class="px-2 pt-3 position-relative">
-                    <p class="fontPlaylists">Allenamenti a casa</p>
-                  </div>
-                </div>
-                <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2"
-                >
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-13.jpg"
-                      alt="..."
-                      width="80"
-                      class="rounded-2"
-                    />
-                  </div>
-                  <div class="px-2 pt-3">
-                    <p class="fontPlaylists">Pulizie di casa</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-8 col-lg-5 col-xl-3 p-0 me-4">
-                <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2"
-                >
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-18.jpg"
-                      alt="..."
-                      width="80"
-                      class="rounded-2"
-                    />
-                  </div>
-                  <div class="px-2 pt-3">
-                    <p class="fontPlaylists">Estate 2022</p>
-                  </div>
-                </div>
-                <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2"
-                >
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-17.jpg"
-                      alt="..."
-                      width="80"
-                      class="rounded-2"
-                    />
-                  </div>
-                  <div class="px-2 pt-3">
-                    <p class="fontPlaylists">NewMusic Friday</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-8 d-lg-none d-xl-grid col-xl-3 p-0 me-4">
-                <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2"
-                >
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-16.jpg"
-                      alt="..."
-                      width="80"
-                      class="rounded-2"
-                    />
-                  </div>
-                  <div class="px-2 pt-3">
-                    <p class="fontPlaylists">Lavorare da casa</p>
-                  </div>
-                </div>
-                <div
-                  class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 mb-2 pe-5 album-grow rounded-2"
-                >
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-15.jpg"
-                      alt="..."
-                      width="80"
-                      class="rounded-2"
-                    />
-                  </div>
-                  <div class="px-2 pt-3">
-                    <p class="fontPlaylists">Casa dolce casa</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="mx-3">
-            <!--sezione album-->
-            <div class="my-4">
-              <h2><a href="#" class="text-white">Consigliati per te</a></h2>
-            </div>
-            <div class="container">
-              <div class="row flex-nowrap" id="row">
-                <!--Qui vanno inserite le "card" dal JS-->
-              </div>
-            </div>
-
-            <div class="my-4">
-              <h2><a href="#" class="text-white">Artisti Popolari</a></h2>
-            </div>
-            <div class="container">
-              <div class="row flex-nowrap" id="rowArtisti">
-                <!--Qui vanno inserite le "card" dal JS-->
-              </div>
-            </div>
-
-
-            <div class="my-4">
-              <h2><a href="#" class="text-white">I più ascoltati</a></h2>
-            </div>
-            <div class="container">
-              <div class="row flex-nowrap" id="rowArtisti2">
-                <!--Qui vanno inserite le "card" dal JS-->
-              </div>
-            </div>
-
-
-          </section>
-          <footer
-            class="container-fluid text-white backgroundMain d-flex justify-content-center mt-4"
-          >
-            <div class="row w-100 justify-content-xl-around">
-              <div class="col-3 col-xl-2 d-flex flex-column">
-                <h5 class="font-weight-bold">Azienda</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Chi siamo</a>
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white"
-                      >Opportunità di lavoro</a
-                    >
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white"
-                      >For the record</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-3 col-xl-2 d-flex flex-column">
-                <h5 class="font-weight-bold">Community</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Per artisti</a>
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Sviluppatori</a>
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Pubblicità</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="col-3 col-xl-2 d-flex flex-column">
-                <h5 class="font-weight-bold">Link utili</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Assistenza</a>
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white"
-                      >App per cellulare gratuita</a
-                    >
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white"
-                      >Diritti del consumatore</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-3 col-xl-2 d-flex flex-column">
-                <h5 class="font-weight-bold">Piani Spotify</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white"
-                      >Premium Individual</a
-                    >
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Premium Duo</a>
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white"
-                      >Premium Family</a
-                    >
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white"
-                      >Premium Student</a
-                    >
-                  </li>
-                  <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-white">Spotify Free</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-12 col-xl-2">
-                <!-- Section: Social media -->
-                <section class="d-flex justify-content-center">
-                  <!-- Facebook -->
-                  <a
-                    class="btn btn-floating p-0 mx-1"
-                    href="https://www.facebook.com/Spotify/"
-                    role="button"
-                    target="_blank"
-                  >
-                    <img
-                      class="bg-primary rounded-circle"
-                      src="assets/img/icons8-facebook-nuovo.svg"
-                      alt=""
-                  /></a>
-                  <!-- Instagram -->
-                  <a
-                    class="btn btn-floating p-0 mx-1"
-                    href="https://www.instagram.com/spotify/"
-                    role="button"
-                    target="_blank"
-                    ><img src="assets/img/icons8-instagram (1).svg" alt=""
-                  /></a>
-
-                  <!-- Linkedin -->
-                  <a
-                    class="btn btn-floating p-0 mx-1"
-                    href="https://it.linkedin.com/company/spotify"
-                    role="button"
-                    target="_blank"
-                    ><img src="assets/img/icons8-linkedin.svg" alt=""
-                  /></a>
-                </section>
-              </div>
-              <div class="container my-3">
-                <footer class="backgroundMain text-end text-white mb-5">
-                  <div
-                    class="d-flex flex-column flex-sm-row justify-content-between py-2 my-2 border-top"
-                  >
-                    <p>&copy; 2024 Spotify, Inc. All rights reserved.</p>
-                  </div>
-                </footer>
-              </div>
-            </div>
-          </footer>
-        </main>
       </div>
+    </nav>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row g-2">
+      <div class="col-md-5 col-lg-4 col-xl-3 p-0 backgroundMain rounded-3 border-end border-5 border-black">
+        <!--QUI CI VA L'ASIDE-->
+        <aside class="p-3 stickyAside">
+          <div class="border-bottom border-black">
+            <ul class="list-unstyled text-white row">
+              <li class="asideItem mb-2 col-12">
+                <a class="nav-link" href="javascript:void(0)">
+                  <svg data-encore-id="icon" role="img" width="40px" height="40px" aria-hidden="true"
+                    viewBox="0 0 16 16" class="bg-secondary p-1 me-1" fill="currentColor" style="border-radius: 3px">
+                    <path
+                      d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z">
+                    </path>
+                  </svg>
+                  <span>Crea la tua playlist</span>
+                </a>
+              </li>
+              <li class="asideItem mb-2 col-12">
+                <a class="nav-link" href="javascript:void(0)">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white me-1" style="border-radius: 3px" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" fill="white" viewBox="0 0 24 24">
+                    <path
+                      d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z" />
+                  </svg>
+                  <span>Brani che ti piacciono</span>
+                </a>
+              </li>
+              <li class="asideItem col-12">
+                <a class="nav-link" href="javascript:void(0)">
+                  <svg width="40px" height="40px" fill="currentColor" class="bg-success p-1 me-1" viewBox="0 0 16 16"
+                    style="border-radius: 3px">
+                    <path
+                      d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                  </svg>
+                  <span>I tuoi episodi</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- STAMPA RICERCA -->
+          <h4 class="text-white-50 py-2">Risultati di ricerca:</h4>
+          <div id="search-results" class="container my-2 text-white p-0">
+            
+          </div>
+        </aside>
+      </div>
+      <!--COMINCIA MAIN-->
+      <main class="col-md-7 col-lg-8 col-xl-9 gradientViolet text-white rounded-3 g-2 ms-0">
+        <div class="m-0 p-0 rounded-1">
+          <div class="m-2">
+            <button class="rounded-circle border-0 bg-transparent text-white mt-4 ms-5" id="btnBack">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="rounded-circle border-0 bg-transparent text-white" id="btnForward">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="container-fluid border-bottom border-white-50 pb-5" id="divSongHome">
+            <div class="row">
+              <div class="col-lg-1">
+                <!-- VUOTO -->
+              </div>
+              <div class="col-4 col-md-6 col-lg-4 col-xl-3 my-3">
+                <!--inserire qui la canzone random -->
+                <img src="assets/imgs/main/image-12.jpg" class="rounded-3 imgShadow w-100" alt="..." id="coverRandom" />
+              </div>
+              <div class="col-md-12 col-lg-6 col-lg-6 col-xl-6">
+                <p class="mt-3 mb-0" id="albumRandom">ALBUM</p>
+                <p class="display-5" id="titoloRandom">TITOLO CANZONE</p>
+                <p id="artistaRandom">Nome artista</p>
+                <button type="button" class="greenSpotify fw-bold border-0 rounded-5 px-4 py-2 me-3 mb-2"
+                  id="btnPlayRandom">
+                  Play
+                </button>
+                <button type="button"
+                  class="rounded-5 fw-bold bg-transparent border border-white text-white px-4 py-2 me-5 mb-2">
+                  Salva
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="container pt-4 mb-5">
+          <!--Qui sezione musica playlist-->
+          <div class="my-3 mx-5">
+            <button type="button" class="rounded-5 bg-white bg-opacity-50 border-0 text-black px-2 py-1">
+              Tutto
+            </button>
+            <button type="button" class="rounded-5 border-0 bg-secondary bg-opacity-25 text-white px-2 py-1">
+              Musica
+            </button>
+            <button type="button" class="rounded-5 border-0 t bg-secondary bg-opacity-25 text-white px-2 py-1 me-5">
+              Podcast
+            </button>
+          </div>
+
+          <div class="row flex-lg-nowrap justify-content-center fw-bold">
+            <div class="col-8 col-lg-5 col-xl-3 p-0 me-4">
+              <div class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2">
+                <div>
+                  <img src="assets/imgs/main/image-14.jpg" alt="..." width="80" class="rounded-2" />
+                </div>
+                <div class="px-2 pt-3 position-relative">
+                  <p class="fontPlaylists">Allenamenti a casa</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2">
+                <div>
+                  <img src="assets/imgs/main/image-13.jpg" alt="..." width="80" class="rounded-2" />
+                </div>
+                <div class="px-2 pt-3">
+                  <p class="fontPlaylists">Pulizie di casa</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-8 col-lg-5 col-xl-3 p-0 me-4">
+              <div class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2">
+                <div>
+                  <img src="assets/imgs/main/image-18.jpg" alt="..." width="80" class="rounded-2" />
+                </div>
+                <div class="px-2 pt-3">
+                  <p class="fontPlaylists">Estate 2022</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2">
+                <div>
+                  <img src="assets/imgs/main/image-17.jpg" alt="..." width="80" class="rounded-2" />
+                </div>
+                <div class="px-2 pt-3">
+                  <p class="fontPlaylists">NewMusic Friday</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-8 d-lg-none d-xl-grid col-xl-3 p-0 me-4">
+              <div class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 my-2 pe-5 album-grow rounded-2">
+                <div>
+                  <img src="assets/imgs/main/image-16.jpg" alt="..." width="80" class="rounded-2" />
+                </div>
+                <div class="px-2 pt-3">
+                  <p class="fontPlaylists">Lavorare da casa</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center bg-secondary bg-opacity-25 border-0 mb-2 pe-5 album-grow rounded-2">
+                <div>
+                  <img src="assets/imgs/main/image-15.jpg" alt="..." width="80" class="rounded-2" />
+                </div>
+                <div class="px-2 pt-3">
+                  <p class="fontPlaylists">Casa dolce casa</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-3">
+          <!--sezione album-->
+          <div class="my-4">
+            <h2><a href="#" class="text-white">Consigliati per te</a></h2>
+          </div>
+          <div class="container">
+            <div class="row flex-nowrap" id="row">
+              <!--Qui vanno inserite le "card" dal JS-->
+            </div>
+          </div>
+
+          <div class="my-4">
+            <h2><a href="#" class="text-white">Artisti Popolari</a></h2>
+          </div>
+          <div class="container">
+            <div class="row flex-nowrap" id="rowArtisti">
+              <!--Qui vanno inserite le "card" dal JS-->
+            </div>
+          </div>
+
+          <div class="my-4">
+            <h2><a href="#" class="text-white">I più ascoltati</a></h2>
+          </div>
+          <div class="container">
+            <div class="row flex-nowrap" id="rowArtisti2">
+              <!--Qui vanno inserite le "card" dal JS-->
+            </div>
+          </div>
+        </section>
+        <footer class="container-fluid text-white backgroundMain d-flex justify-content-center mt-4">
+          <div class="row w-100 justify-content-xl-around">
+            <div class="col-3 col-xl-2 d-flex flex-column">
+              <h5 class="font-weight-bold">Azienda</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Chi siamo</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Opportunità di lavoro</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">For the record</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3 col-xl-2 d-flex flex-column">
+              <h5 class="font-weight-bold">Community</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Per artisti</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Sviluppatori</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Pubblicità</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-3 col-xl-2 d-flex flex-column">
+              <h5 class="font-weight-bold">Link utili</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Assistenza</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">App per cellulare gratuita</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Diritti del consumatore</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3 col-xl-2 d-flex flex-column">
+              <h5 class="font-weight-bold">Piani Spotify</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Premium Individual</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Premium Duo</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Premium Family</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Premium Student</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-white">Spotify Free</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-xl-2">
+              <!-- Section: Social media -->
+              <section class="d-flex justify-content-center">
+                <!-- Facebook -->
+                <a class="btn btn-floating p-0 mx-1" href="https://www.facebook.com/Spotify/" role="button"
+                  target="_blank">
+                  <img class="bg-primary rounded-circle" src="assets/img/icons8-facebook-nuovo.svg" alt="" /></a>
+                <!-- Instagram -->
+                <a class="btn btn-floating p-0 mx-1" href="https://www.instagram.com/spotify/" role="button"
+                  target="_blank"><img src="assets/img/icons8-instagram (1).svg" alt="" /></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-floating p-0 mx-1" href="https://it.linkedin.com/company/spotify" role="button"
+                  target="_blank"><img src="assets/img/icons8-linkedin.svg" alt="" /></a>
+              </section>
+            </div>
+            <div class="container my-3">
+              <footer class="backgroundMain text-end text-white mb-5">
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-2 my-2 border-top">
+                  <p>&copy; 2024 Spotify, Inc. All rights reserved.</p>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </footer>
+      </main>
     </div>
+  </div>
 
-    <section>
-      <div class="bg-black text-white fixed-bottom py-2">
-        <div
-          class="container-fluid d-flex justify-content-between align-items-center"
-        >
-          <!-- Informazioni brano -->
-          <div class="d-flex align-items-center">
-            <div class="playerImg me-2">
-              <img src="" alt="" class="w-100 rounded-3" id="playerImg" />
-            </div>
-            <div>
-              <p class="mb-0" id="song-title">Titolo</p>
-              <small id="artist-name">Artista</small>
-            </div>
+  <section>
+    <div class="bg-black text-white fixed-bottom py-2">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Informazioni brano -->
+        <div class="d-flex align-items-center">
+          <div class="playerImg me-2">
+            <img src="" alt="" class="w-100 rounded-3" id="playerImg" />
           </div>
-
-          <!-- Bottoni Player -->
-          <div class="d-flex flex-column w-50 mt-2 mx-auto">
-            <div
-              class="d-flex justify-content-between align-items-center w-100 px-3"
-            >
-              <span id="current-time">0:00</span>
-              <div class="d-flex align-items-center">
-                <button
-                  class="btn text-white-50 btn-sm btn-previous"
-                  id="playerBtnBack"
-                >
-                  <i class="fas fa-backward fs-5"></i>
-                </button>
-                <button
-                  class="btn bg-white text-dark rounded-circle btn-play mx-2"
-                >
-                  <i class="fas fa-play"></i>
-                </button>
-                <button
-                  class="btn text-white-50 btn-sm btn-next"
-                  id="playerBtnForward"
-                >
-                  <i class="fas fa-forward fs-5"></i>
-                </button>
-              </div>
-              <span id="total-time">0:00</span>
-            </div>
-            <input
-              type="range"
-              class="my-2"
-              id="progress-bar"
-              min="0"
-              value="0"
-              max="100"
-              style="width: 100%"
-            />
-          </div>
-
-          <!-- Controllo Volume -->
-          <div class="d-flex align-items-center" id="volume">
-            <i class="fas fa-volume-down text-white me-2"></i>
-            <input
-              type="range"
-              class="form-range"
-              id="volume-control"
-              min="0"
-              max="100"
-            />
-            <i class="fas fa-volume-up text-white ms-2"></i>
+          <div>
+            <p class="mb-0" id="song-title">Titolo</p>
+            <small id="artist-name">Artista</small>
           </div>
         </div>
 
-        <!-- Barra di avanzamento temporale -->
-      </div>
-    </section>
+        <!-- Bottoni Player -->
+        <div class="d-flex flex-column w-50 mt-2 mx-auto">
+          <div class="d-flex justify-content-between align-items-center w-100 px-3">
+            <span id="current-time">0:00</span>
+            <div class="d-flex align-items-center">
+              <button class="btn text-white-50 btn-sm btn-previous" id="playerBtnBack">
+                <i class="fas fa-backward fs-5"></i>
+              </button>
+              <button class="btn bg-white text-dark rounded-circle btn-play mx-2">
+                <i class="fas fa-play"></i>
+              </button>
+              <button class="btn text-white-50 btn-sm btn-next" id="playerBtnForward">
+                <i class="fas fa-forward fs-5"></i>
+              </button>
+            </div>
+            <span id="total-time">0:00</span>
+          </div>
+          <input type="range" class="my-2" id="progress-bar" min="0" value="0" max="100" style="width: 100%" />
+        </div>
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        <!-- Controllo Volume -->
+        <div class="d-flex align-items-center" id="volume">
+          <i class="fas fa-volume-down text-white me-2"></i>
+          <input type="range" class="form-range" id="volume-control" min="0" max="100" />
+          <i class="fas fa-volume-up text-white ms-2"></i>
+        </div>
+      </div>
+
+      <!-- Barra di avanzamento temporale -->
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
-    <script src="assets/js/script.js"></script>
-    
-  </body>
+    crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>
