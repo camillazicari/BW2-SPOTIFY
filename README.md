@@ -5,7 +5,7 @@
 🎶 **SPOTIFY** – Il tuo mondo musicale personalizzato 🎵
 
 Benvenuto in **Spotify**, un'applicazione web progettata per rivoluzionare il modo in cui scopri, organizzi e ascolti la tua musica preferita.<br> 
-**Spotify** ti permette di esplorare album di artisti, selezionare i tuoi preferiti e creare playlist personalizzate, tutto in un'unica interfaccia semplice e intuitiva! ✨ <br> 
+**Spotify** ti permette di esplorare album di artisti e selezionare i tuoi preferiti tutto in un'unica interfaccia semplice e intuitiva! ✨ <br> 
 
 ---
 
