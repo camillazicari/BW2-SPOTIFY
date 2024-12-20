@@ -427,6 +427,7 @@ function displaySearchResults(songs) {
             const searchArtist = document.querySelectorAll('#searchArtist');
             const pointerAlbum = document.querySelectorAll('#pointerAlbum');
 
+            //click FOTO ALBUM X ANDARE AGLI ALBUM
             for (let i = 0; i < searchAlbum.length; i++) {
                 searchAlbum[i].addEventListener('click', (e) => {
                     e.preventDefault();
@@ -435,6 +436,8 @@ function displaySearchResults(songs) {
                     window.location.href = newUrl;
                 })
             }
+
+            //CLICK NOME ARTISTA X ANDARE AGLI ARTISTI
             for (let i = 0; i < searchArtist.length; i++) {
                 searchArtist[i].addEventListener('click', (e) => {
                     e.preventDefault();
@@ -443,6 +446,8 @@ function displaySearchResults(songs) {
                     window.location.href = newUrl;
                 })
             }
+
+            //CLICK NOME ALBUM X ANDARE AGLI ALBUM
             for (let i = 0; i < pointerAlbum.length; i++) {
                 pointerAlbum[i].addEventListener('click', (e) => {
                     e.preventDefault();
@@ -461,6 +466,7 @@ function displaySearchResults(songs) {
 
     }
 
+    //CLICK AL BUTTON PLAY DELLA RICERCA FA POPOLARE IL PLAYER
     document.querySelectorAll(".play-song-btn").forEach((btn) => {
         btn.addEventListener("click", (e) => {
             const image = btn.getAttribute("data-image");
@@ -485,7 +491,7 @@ function playSongFromSearch(image, preview, title, artist) {
     playButton.classList.add("fa-pause");
 }
 
-
+//STAMPA RICERCA E POPOLA PLAYER AL CLICK DEL BUTTON 'CERCA'
 searchButton.addEventListener("click", () => {
     const query = searchInput.value.trim();
     if (query) {
