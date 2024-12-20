@@ -1,3 +1,4 @@
+ <img src="https://pixabay.com/it/illustrations/alberi-di-natale-sfondo-disegno-7576912/">
 ## SPOTIFY
 ### Descrizione
 #### Benvenuti in :grin:
@@ -79,8 +80,8 @@ Per maggiori dettagli, scrivi a **noreply@epicode.com** :email: <br>
 
  :woman_technologist:  [Camilla Zicari](https://github.com/camillazicari)  <br> 
  :woman_office_worker: [Francesca Palmeri](https://github.com/Francesca-palmeri)  <br> 
- :man_office_worker:   [Miguel Jano Salcedo](https://github.com/migueljano)  <br> 
  :woman_technologist: [Manuela Lissia](https://github.com/M4nu3l4)  <br> 
+ :man_office_worker:   [Miguel Jano Salcedo](https://github.com/migueljano)  <br>
  :man_technologist: [Giovanni Ramaglia](https://github.com/cybergam3r)  <br> 
 
  <hr>
